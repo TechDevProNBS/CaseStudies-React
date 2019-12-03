@@ -1,12 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import Employee from './components/showrecords.component.js';
-import Home from './components/homepage.component.js';
-import Login from './components/login.component.js';
-import CreateUser from './components/createuser.component.js';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Header from './components/header.component.js';
-import AddRecord from './components/AddRecord.component.js';
-import UpdateRecord from './components/UpdateRecord.component.js';
+import SearchBar from './components/searchbar.component.js';
+
 
 class HomePage extends React.Component{
   render(){
@@ -15,93 +11,13 @@ class HomePage extends React.Component{
 }
 
 export default class Nationwide extends React.Component{
-
-    //     state={recordsback:[
-    //         {regno:1, name:'Shafeeq', marks:100},{regno:2, name:'Smith', marks:45},{regno:3, name:'Bob', marks:65},{regno:4, name:'Brad', marks:85},{regno:5, name:'Brawer', marks:105},{regno:6, name:'Time', marks:125},{regno:7, name:'Timmy', marks:135},{regno:8, name:'Tom', marks:72},{regno:9, name:'Pavlos', marks:140}
-    //     ],records:[{regno:1, name:'Shafeeq', marks:100},{regno:2, name:'Smith', marks:45},{regno:3, name:'Bob', marks:65},{regno:4, name:'Brad', marks:85},{regno:5, name:'Brawer', marks:105},{regno:6, name:'Time', marks:125},{regno:7, name:'Timmy', marks:135},{regno:8, name:'Tom', marks:72},{regno:9, name:'Pavlos', marks:140}],regno:"",name:"",marks:""};
-
-    // initRecords=()=>{
-    //     let values = this.state.recordsback
-    //     this.setState({ 
-    //         records: values})
-    // }
-    // initRecords2=()=>{
-    //     let values = this.state.records
-    //     this.setState({ 
-    //         recordsback: values})
-    // }
-
-    // handleChange=(e)=>{
-    //     let nam = e.target.name;
-    //     let value = e.target.value;
-    //     if(nam === "regno"){
-    //         this.setState({ 
-    //             regno: value})
-    //     }
-    //     if(nam === "name"){
-    //         this.setState({ 
-    //             name: value})
-    //     }
-    //     if(nam === "marks"){
-    //         this.setState({ 
-    //             marks: value})
-    //     }
-    // }
-
-    // addValues=(e)=>{
-    //     let regno1 = this.state.regno;
-    //     let name1 = this.state.name;
-    //     let marks1 = this.state.marks;
-    //     let newdata = {regno:regno1, name:name1, marks:marks1}
-    //     let newarray = this.state.recordsback;
-    //     let blank = "";
-    //     newarray.push(newdata);
-    //     this.setState({
-    //         recordsback : newarray, regno:blank, name:blank, marks:blank
-    //     });
-    //     this.initRecords();
-    // }
-    // deleteValues=(e)=>{
-    //     let id = parseInt(e.target.id);
-    //     console.log(id);
-    //     let newArray = this.state.recordsback.filter(function(rec){
-    //         if(parseInt(rec.regno) !== id){
-    //             console.log(rec.regno);
-    //             return rec;
-    //         }
-    //         else{
-    //             return null;
-    //         }
-    //     })
-    //     this.setState({
-    //         records : newArray
-    //     });
-    //     this.setState({ 
-    //         recordsback: newArray})
-
-    //     //this.initRecords2();
-    // }
-    // searchFilter=(e)=>{
-    //     //this.initRecords();
-    //     let value = e.target.value.toLowerCase();
-    //     let newRecords = this.state.recordsback.filter( rec=>
-    //         rec.name.substring(0,value.length).toLowerCase()===value)
-    //     this.setState({
-    //         records: newRecords
-    //     });
-    // }
-
-    render(){
+      render(){
         return(
             <div className="bg-light">
                 <Router>
                     <div>
-                        <Route exact path="/showtable" component={Employee}/>
-                        <Route exact path="/" component={Home}/>
-                        <Route exact path="/login" component={Login}/>
-                        <Route exact path="/createUser" component={CreateUser}/>  
-                        <Route exact path="/addRecord" component={AddRecord}/>
-                        <Route exact path="/updateRecord" component={UpdateRecord}/>
+                        <Route exact path="/" component={Header}/>
+                        <Route exact path="/search" component={SearchBar}/>
                     </div>
                 </Router>
                 
