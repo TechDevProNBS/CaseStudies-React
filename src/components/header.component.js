@@ -13,7 +13,7 @@ export default class Mine extends React.Component{
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                         <Nav.Link href="http://localhost:3000/createuser">Home</Nav.Link>
-                        <Nav.Link href="http://localhost:3000/login">Case Study</Nav.Link>
+                        <Nav.Link href="http://localhost:3000/search">Case Study</Nav.Link>
                     </Nav>
                     <NavItem className="ml-auto">
                     <Button variant="outline-light" href="/login">Login</Button>
