@@ -1,0 +1,46 @@
+
+
+
+
+
+.header {
+    margin-bottom: 1rem;
+    padding-top: 1rem
+}
+
+@media (min-width:992px) {
+    .header {
+        margin-bottom: 0
+    }
+}
+
+
+.logo {
+    display: inline-block
+}
+
+@media (min-width:992px) {
+    .logo {
+        margin-bottom: 1rem;
+        padding: 0 .5rem
+    }
+}
+
+.header-btn {
+    display: inline-block;
+    padding: 0 .4rem;
+    text-align: center;
+    color: #004a8f
+}
+
+@media (min-width:992px) {
+    .header-btn {
+        margin-bottom: 1rem
+    }
+}
+
+.header-btn span {
+    display: block;
+    font-weight: 700;
+    font-size: 1rem
+}
