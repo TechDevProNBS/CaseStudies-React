@@ -1,7 +1,7 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import {BrowserRouter as Router, Route, Link} from "react-router-dom"
+//import Form from 'react-bootstrap/Form';
+//import Button from 'react-bootstrap/Button';
+//import {BrowserRouter as Router, Route, Link} from "react-router-dom"
 
 export default class SearchBar extends React.Component {
     render() {

@@ -1,8 +1,8 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
+//import Form from 'react-bootstrap/Form';
 import { Redirect } from 'react-router-dom';
-import { Navbar, Nav, NavDropdown, NavItem } from 'react-bootstrap';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+//import { Navbar, Nav, NavDropdown, NavItem } from 'react-bootstrap';
+//import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default class Homepage extends React.Component {
 
@@ -51,7 +51,7 @@ export default class Homepage extends React.Component {
                                 <div class="card mb-3" style={{ maxWidth: "1040px" }}>
                                     <div class="row no-gutters">
                                         <div class="col-md-4">
-                                            <img src="https://cwind.global/wp-content/uploads/2017/04/Head-and-shoulder-silhouette.jpg" style={{ borderStyle: "solid", borderColor: "black", borderWidth: "1px" }} class="card-img" alt="Image of Manager" />
+                                            <img src="https://cwind.global/wp-content/uploads/2017/04/Head-and-shoulder-silhouette.jpg" style={{ borderStyle: "solid", borderColor: "black", borderWidth: "1px" }} class="card-img" alt="Manager" />
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card-body">
@@ -65,7 +65,7 @@ export default class Homepage extends React.Component {
                                 <div class="card mb-3" style={{ maxWidth: "1040px" }}>
                                     <div class="row no-gutters">
                                         <div class="col-md-4">
-                                            <img src="https://cwind.global/wp-content/uploads/2017/04/Head-and-shoulder-silhouette.jpg" style={{ borderStyle: "solid", borderColor: "black", borderWidth: "1px" }} class="card-img" alt="Image of Manager" />
+                                            <img src="https://cwind.global/wp-content/uploads/2017/04/Head-and-shoulder-silhouette.jpg" style={{ borderStyle: "solid", borderColor: "black", borderWidth: "1px" }} class="card-img" alt="Manager" />
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card-body">
@@ -79,7 +79,7 @@ export default class Homepage extends React.Component {
                                 <div class="card mb-3" style={{ maxWidth: "1040px" }}>
                                     <div class="row no-gutters">
                                         <div class="col-md-4">
-                                            <img src="https://cwind.global/wp-content/uploads/2017/04/Head-and-shoulder-silhouette.jpg" style={{ borderStyle: "solid", borderColor: "black", borderWidth: "1px" }} class="card-img" alt="Image of Manager" />
+                                            <img src="https://cwind.global/wp-content/uploads/2017/04/Head-and-shoulder-silhouette.jpg" style={{ borderStyle: "solid", borderColor: "black", borderWidth: "1px" }} class="card-img" alt="Manager" />
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card-body">
