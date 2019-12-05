@@ -153,9 +153,7 @@ export default class SearchBar extends React.Component {
                           aria-label="Select location"
                           onChange = {this.filterbylocation}
                         >
-                          <option value="-1" selected="selected">
-                            Select Location
-                          </option>
+                          <option value="" selected="selected">Select Location</option>
                           <option value="Swindon">Swindon</option>
                           <option value="London">London</option>
                           <option value="Bournemouth">Bournemouth</option>
@@ -172,9 +170,7 @@ export default class SearchBar extends React.Component {
                           title="Search Year"
                           onChange = {this.filterbyyear}
                         >
-                          <option value="-1" selected="selected">
-                            Select Year
-                          </option>
+                          <option value="" selected="selected">Select Year</option>
                           <option value="2019">2019</option>
                           <option value="2018">2018</option>
                           <option value="2017">2017</option>
@@ -197,7 +193,7 @@ export default class SearchBar extends React.Component {
                           aria-label="Select Stream"
                           onChange = {this.filterbystream}
                         >
-                          <option value="-1" selected="selected">Select Stream</option>
+                          <option value="" selected="selected">Select Stream</option>
                           <option value="Software Engineering">Software Engineering</option>
                           <option value="DevOps">DevOps</option>
                           <option value="Cyber Security">Cyber Security</option>
@@ -215,7 +211,7 @@ export default class SearchBar extends React.Component {
                           aria-label="Select contract type"
                           onChange = {this.filterbyrole}
                           >
-                          <option value="-1" selected="selected">Search Roles</option>
+                          <option value="" selected="selected">Search Roles</option>
                           <option value="Software Engineer">Software Engineer</option>
                           <option value="DevOps Engineer">DevOps Engineer</option>
                           <option value="Technical Analyst">Technical Analyst</option>
