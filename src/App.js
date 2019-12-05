@@ -4,6 +4,7 @@ import ShowRecords from './components/showrecords.component.js';
 import SingleRecord from './components/singlerecordview.component.js';
 import Header from './components/header.component.js';
 import SearchBar from './components/searchbar.component.js';
+import Login from './components/login.component.js';
 
 
 export default class Nationwide extends React.Component{
@@ -15,7 +16,9 @@ export default class Nationwide extends React.Component{
             <div>
                 <Route exact path="/" component={ShowRecords}/>
                 <Route exact path="/full/:var?" component={SingleRecord}/>
-                <Route exact path="/search" component={SearchBar}/>
+                <Route exact path="/search" component={SearchBar}/>  
+                <Route exact path="/login" component={Login}/>                
+
             </div>
         </Router>
     </div>
