@@ -38,15 +38,37 @@ export default class Mine extends React.Component {
       renderRedirect = () => {
         if (this.state.redirect) {
             console.log(this.props.value+this.props.key+this.props.id)
-            let url = '/full/' + this.state.id;
+            let url = '/adminfull/' + this.state.id;
           return <Redirect to={url} />
         }
       }
+
+      deleteRecord(_id) {
+
+        let data = {
+            "id": _id
+        }
+        console.log(JSON.stringify(data) + " " + _id)
+        fetch(`http://localhost:8000/deleterecord`, {
+            method: 'Delete',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+
+        })
+
+        window.location.reload();
+
+    }
 
     render() {
         console.log(this.state.employee);
             return (
                 <div>
+                    <font face="calibri" color="red"><b>You are now logged in as an Administrator. This allows you to create, edit or delete profile from this page.<br/>To edit a profile, please click "View/Edit Profile".</b><br/>
+                    <button>Add New Profile</button>
+                    </font>
                     <font face="calibri">
                             {this.state.employee.map(data => {
                                 return (
@@ -69,7 +91,8 @@ export default class Mine extends React.Component {
                                                 {data.mainText.substring(0,250)}...<br/>
                                                 </p>
                                                 {this.renderRedirect()}
-                                                <button onClick={()=>{this.setState({id:data.id});console.log("here"+data.id); this.setRedirect()}} id={data.id}>View Full Profile</button>
+                                                <button onClick={()=>{this.setState({id:data.id});console.log("here"+data.id); this.setRedirect()}} id={data.id}>View/Edit Profile</button>
+                                                <button onClick={()=>{this.deleteRecord(data.id)}} id={data.id}>Delete Profile</button>
                                             </div>
                                         </div>
                                     </div>
