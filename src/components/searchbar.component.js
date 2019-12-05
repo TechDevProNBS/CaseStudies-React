@@ -16,7 +16,7 @@ export default class SearchBar extends React.Component {
                     Year: 2019,
                     Stream: 'Software Engineering',
                     Location: 'Swindon',
-                    Testimonial: "Greate experience learning new technology and skills and meeting all the different people"
+                    Testimonial: "Great experience learning new technology and skills and meeting all the different people"
                 },
                 {   Image: 'B',
                     Name: 'Sameena Syed',
@@ -24,7 +24,7 @@ export default class SearchBar extends React.Component {
                     Year: 2019,
                     Stream: 'DevOps',
                     Location: 'London',
-                    Testimonial: "Greate experience learning new technology and skills and meeting all the different people"
+                    Testimonial: "Great experience learning new technology and skills and meeting all the different people"
                 },
                 {   Image: 'C',
                     Name: 'Shahid Saleem',
@@ -32,7 +32,7 @@ export default class SearchBar extends React.Component {
                     Year: 2017,
                     Stream: 'Software Engineering',
                     Location: 'Swindon',
-                    Testimonial: "Greate experience learning new technology and skills and meeting all the different people"
+                    Testimonial: "Great experience learning new technology and skills and meeting all the different people"
                 },
                 {   Image: 'D',
                     Name: 'Samantha Star',
@@ -40,7 +40,7 @@ export default class SearchBar extends React.Component {
                     Year: 2018,
                     Stream: 'DevOps',
                     Location: 'Swindon',
-                    Testimonial: "Greate experience learning new technology and skills and meeting all the different people"
+                    Testimonial: "Great experience learning new technology and skills and meeting all the different people"
                 },
                 {   Image: 'E',
                     Name: 'Sukhdeep Singh',
@@ -48,7 +48,7 @@ export default class SearchBar extends React.Component {
                     Year: 2016,
                     Stream: 'Software Engineering',
                     Location: 'Swindon',
-                    Testimonial: "Greate experience learning new technology and skills and meeting all the different people"
+                    Testimonial: "Great experience learning new technology and skills and meeting all the different people"
                 },
                 {   Image: 'F',
                     Name: 'ASulayman Sarwar',
@@ -56,7 +56,7 @@ export default class SearchBar extends React.Component {
                     Year: 2019,
                     Stream: 'Software Engineering',
                     Location: 'Swindon',
-                    Testimonial: "Greate experience learning new technology and skills and meeting all the different people"
+                    Testimonial: "Great experience learning new technology and skills and meeting all the different people"
                 }
             ],
         }
@@ -64,10 +64,8 @@ export default class SearchBar extends React.Component {
         this.filterbyyear = this.filterbyyear.bind(this);
         this.filterbystream = this.filterbystream.bind(this);
         this.filterbyrole = this.filterbyrole.bind(this);
-       
         this.state.rec2 = this.state.records;
     }
-
     filterbylocation(l) {
         l = document.getElementById("filterbylocation").value;
         var results = this.state.records.filter( fil => (fil.Location == l || l == "" ))
@@ -75,7 +73,6 @@ export default class SearchBar extends React.Component {
             rec2: results
         })
     }
-
     filterbystream(s) {
         s = document.getElementById("filterbystream").value.toUpperCase();
         var results = this.state.records.filter( fil => (fil.Stream == s || s == "" ))
@@ -83,7 +80,6 @@ export default class SearchBar extends React.Component {
             rec2: results
         })
     }
-
     filterbyyear() {
         let y = document.getElementById("filterbyyear").value;
         var results = this.state.records.filter( fil => (fil.Year >= y || y == "" ))
@@ -91,7 +87,6 @@ export default class SearchBar extends React.Component {
             rec2: results
         })
     }
-
     filterbyrole(r) {
         r = document.getElementById("filterbyrole").value;
         var results = this.state.records.filter( fil => (fil.Role == r || r == "" ))
@@ -99,17 +94,13 @@ export default class SearchBar extends React.Component {
             rec2: results
         })
     }
-
-    filterbyanyting=()=> {
+    filterbyanything=()=> {
             let searchingfor=document.getElementById("filterbysearch").value
-         //   alert(searchingfor)
             var results = this.state.records.filter( fil => (fil.Name.indexOf(searchingfor) != -1 ||  fil.Role.indexOf(searchingfor)!=-1 ||  fil.Location.indexOf(searchingfor)!=-1 ||  fil.Stream.indexOf(searchingfor)!=-1 ))
             this.setState({
                 rec2: results
             })
     }
-
-
   render() {
     return (
       <div>
@@ -139,8 +130,9 @@ export default class SearchBar extends React.Component {
                         maxlength="100"
                         autocomplete="off"
                         minlength="2"
+                        onChange= {this.filterbyanything}
                       />
-                      <button type="button" onClick={this.filterbyanyting}>
+                      <button type="button" onClick={this.filterbyanything}>
                         <img src={magnifying_glass} width="20" height="20" />
                       </button>
                     </span>
@@ -201,22 +193,12 @@ export default class SearchBar extends React.Component {
                           aria-label="Select Stream"
                           onChange = {this.filterbystream}
                         >
-                          <option value="-1" selected="selected">
-                            Select Stream
-                          </option>
-                          <option value="Software Engineering">
-                            Software Engineering
-                          </option>
-                          <option value="DevOps Engineering">
-                            DevOps Engineering
-                          </option>
+                          <option value="-1" selected="selected">Select Stream</option>
+                          <option value="Software Engineering">Software Engineering</option>
+                          <option value="DevOps Engineering">DevOps Engineering</option>
                           <option value="Cyber Security">Cyber Security</option>
-                          <option value="Data and Analytics">
-                            Data and Analytics
-                          </option>
-                          <option value="Industrial Placement">
-                            Industrial Placement
-                          </option>
+                          <option value="Data and Analytics">Data and Analytics</option>
+                          <option value="Industrial Placement">Industrial Placement</option>
                           <option value="Other">Other</option>
                         </select>
                       </div>
@@ -228,19 +210,11 @@ export default class SearchBar extends React.Component {
                           id="filterbystream"
                           aria-label="Select contract type"
                           onChange = {this.filterbyrole}
-                        >
-                          <option value="-1" selected="selected">
-                            Search Roles
-                          </option>
-                          <option value="Software Engineer">
-                            Software Engineer
-                          </option>
-                          <option value="DevOps Engineer">
-                            DevOps Engineer
-                          </option>
-                          <option value="Technical Analyst">
-                            Technical Analyst
-                          </option>
+                          >
+                          <option value="-1" selected="selected">Search Roles</option>
+                          <option value="Software Engineer">Software Engineer</option>
+                          <option value="DevOps Engineer">DevOps Engineer</option>
+                          <option value="Technical Analyst">Technical Analyst</option>
                           <option value="Data Engineer">Data Engineer</option>
                         </select>
                       </div>
@@ -252,17 +226,16 @@ export default class SearchBar extends React.Component {
                 <center>
                 <table>
                     <tr>
-                        <th> Image</th>
-                        <th> Name</th>
-                        <th> Role </th>
-                        <th> Stream </th>
-                        <th> Location </th>
-                        <th> Year </th>
-                        <th> Testimonial</th>
+                        <th><center> Image </center></th>
+                        <th><center> Name </center></th>
+                        <th><center> Role </center></th>
+                        <th><center> Stream </center></th>
+                        <th><center> Location </center></th>
+                        <th style={{width:"70px"}}><center> Year </center></th>
+                        <th><center> Testimonial </center></th>
                         <th></th>
                     </tr>
-                     {
-                    this.state.rec2.map( rec=> 
+                     {this.state.rec2.map( rec=> 
                         <tr>
                             <td><center> {rec.Image} </center></td>
                             <td><center> {rec.Name} </center></td>
@@ -272,8 +245,7 @@ export default class SearchBar extends React.Component {
                             <td><center> {rec.Year} </center></td>
                             <td><center> {rec.Testimonial} </center></td>
                             </tr>
-                        )
-                    }
+                        )}
                  </table>
                 </center>
                 <br></br>
