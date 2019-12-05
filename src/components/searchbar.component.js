@@ -12,7 +12,7 @@ export default class SearchBar extends React.Component {
            records: [
                 {   Image: 'A',
                     Name: 'Smythe Smith',
-                    Role: "Software Developer",
+                    Role: "Software Engineer",
                     Year: 2019,
                     Stream: 'Software Engineering',
                     Location: 'Swindon',
@@ -20,7 +20,7 @@ export default class SearchBar extends React.Component {
                 },
                 {   Image: 'B',
                     Name: 'Sameena Syed',
-                    Role: "Devops Developer",
+                    Role: "DevOps Engineer",
                     Year: 2019,
                     Stream: 'DevOps',
                     Location: 'London',
@@ -28,7 +28,7 @@ export default class SearchBar extends React.Component {
                 },
                 {   Image: 'C',
                     Name: 'Shahid Saleem',
-                    Role: "Software Developer",
+                    Role: "Technical Analyst",
                     Year: 2017,
                     Stream: 'Software Engineering',
                     Location: 'Swindon',
@@ -44,15 +44,15 @@ export default class SearchBar extends React.Component {
                 },
                 {   Image: 'E',
                     Name: 'Sukhdeep Singh',
-                    Role: "Software Developer",
+                    Role: "Business Analyst",
                     Year: 2016,
                     Stream: 'Software Engineering',
                     Location: 'Swindon',
                     Testimonial: "Great experience learning new technology and skills and meeting all the different people"
                 },
                 {   Image: 'F',
-                    Name: 'ASulayman Sarwar',
-                    Role: "Software Developer",
+                    Name: 'Sulayman Sarwar',
+                    Role: "Data Engineer",
                     Year: 2019,
                     Stream: 'Software Engineering',
                     Location: 'Swindon',
@@ -66,15 +66,15 @@ export default class SearchBar extends React.Component {
         this.filterbyrole = this.filterbyrole.bind(this);
         this.state.rec2 = this.state.records;
     }
-    filterbylocation(l) {
-        l = document.getElementById("filterbylocation").value;
+    filterbylocation() {
+        let l = document.getElementById("filterbylocation").value;
         var results = this.state.records.filter( fil => (fil.Location == l || l == "" ))
         this.setState({
             rec2: results
         })
     }
-    filterbystream(s) {
-        s = document.getElementById("filterbystream").value.toUpperCase();
+    filterbystream() {
+        let s = document.getElementById("filterbystream").value;
         var results = this.state.records.filter( fil => (fil.Stream == s || s == "" ))
         this.setState({
             rec2: results
@@ -82,21 +82,25 @@ export default class SearchBar extends React.Component {
     }
     filterbyyear() {
         let y = document.getElementById("filterbyyear").value;
-        var results = this.state.records.filter( fil => (fil.Year >= y || y == "" ))
+        var results = this.state.records.filter( fil => (fil.Year == y || y == "" ))
         this.setState({
             rec2: results
         })
     }
-    filterbyrole(r) {
-        r = document.getElementById("filterbyrole").value;
+    filterbyrole() {
+        let r = document.getElementById("filterbyrole").value;
         var results = this.state.records.filter( fil => (fil.Role == r || r == "" ))
         this.setState({
             rec2: results
         })
     }
     filterbyanything=()=> {
-            let searchingfor=document.getElementById("filterbysearch").value
-            var results = this.state.records.filter( fil => (fil.Name.indexOf(searchingfor) != -1 ||  fil.Role.indexOf(searchingfor)!=-1 ||  fil.Location.indexOf(searchingfor)!=-1 ||  fil.Stream.indexOf(searchingfor)!=-1 ))
+            let searchingfor=document.getElementById("filterbysearch").value;
+            var results = this.state.records.filter( fil => ( fil.Name.indexOf(searchingfor) != -1 ||
+                                                              fil.Role.indexOf(searchingfor)!=-1 ||  
+                                                              fil.Location.indexOf(searchingfor)!=-1 ||
+                                                              fil.Testimonial.indexOf(searchingfor)!=-1 ||
+                                                              fil.Stream.indexOf(searchingfor)!=-1 ))
             this.setState({
                 rec2: results
             })
@@ -195,7 +199,7 @@ export default class SearchBar extends React.Component {
                         >
                           <option value="-1" selected="selected">Select Stream</option>
                           <option value="Software Engineering">Software Engineering</option>
-                          <option value="DevOps Engineering">DevOps Engineering</option>
+                          <option value="DevOps">DevOps</option>
                           <option value="Cyber Security">Cyber Security</option>
                           <option value="Data and Analytics">Data and Analytics</option>
                           <option value="Industrial Placement">Industrial Placement</option>
@@ -207,7 +211,7 @@ export default class SearchBar extends React.Component {
                         <select
                           class="form-control"
                           name="contract"
-                          id="filterbystream"
+                          id="filterbyrole"
                           aria-label="Select contract type"
                           onChange = {this.filterbyrole}
                           >
@@ -215,6 +219,8 @@ export default class SearchBar extends React.Component {
                           <option value="Software Engineer">Software Engineer</option>
                           <option value="DevOps Engineer">DevOps Engineer</option>
                           <option value="Technical Analyst">Technical Analyst</option>
+                          <option value="Business Analyst">Business Analyst</option>
+                          <option value="Risk Analyst">Risk Analyst</option>
                           <option value="Data Engineer">Data Engineer</option>
                         </select>
                       </div>
@@ -227,12 +233,12 @@ export default class SearchBar extends React.Component {
                 <table>
                     <tr>
                         <th><center> Image </center></th>
-                        <th><center> Name </center></th>
-                        <th><center> Role </center></th>
-                        <th><center> Stream </center></th>
-                        <th><center> Location </center></th>
+                        <th style={{width:"115px"}}><center> Name </center></th>
+                        <th style={{width:"90px"}}><center> Role </center></th>
+                        <th style={{width:"90px"}}><center> Stream </center></th>
+                        <th style={{width:"80px"}}><center> Location </center></th>
                         <th style={{width:"70px"}}><center> Year </center></th>
-                        <th><center> Testimonial </center></th>
+                        <th style={{width:"600px"}}><center> Testimonial </center></th>
                         <th></th>
                     </tr>
                      {this.state.rec2.map( rec=> 
@@ -243,7 +249,7 @@ export default class SearchBar extends React.Component {
                             <td><center> {rec.Stream} </center></td>
                             <td><center> {rec.Location} </center></td>
                             <td><center> {rec.Year} </center></td>
-                            <td><center> {rec.Testimonial} </center></td>
+                            <td> {rec.Testimonial} </td>
                             </tr>
                         )}
                  </table>
