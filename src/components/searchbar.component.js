@@ -10,7 +10,7 @@ export default class SearchBar extends React.Component {
         super();
         this.state = {
            records: [
-                {   Image: 'A',
+                {   Image: "A",
                     Name: 'Smythe Smith',
                     Role: "Software Engineer",
                     Year: 2019,
