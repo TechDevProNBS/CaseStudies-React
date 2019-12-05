@@ -16,7 +16,7 @@ export default class SearchBar extends React.Component {
                     Year: 2019,
                     Stream: 'Software Engineering',
                     Location: 'Swindon',
-                    Testimonial: "Great experience learning new technology and skills and meeting all the different people"
+                    Testimonial: "Great experience learning new technology and skills and meeting all the different people."
                 },
                 {   Image: 'B',
                     Name: 'Sameena Syed',
@@ -24,7 +24,7 @@ export default class SearchBar extends React.Component {
                     Year: 2019,
                     Stream: 'DevOps',
                     Location: 'London',
-                    Testimonial: "Great experience learning new technology and skills and meeting all the different people"
+                    Testimonial: "Found it very difficult but very rewarding, one of the best work places I've ever worked in."
                 },
                 {   Image: 'C',
                     Name: 'Shahid Saleem',
@@ -32,7 +32,7 @@ export default class SearchBar extends React.Component {
                     Year: 2017,
                     Stream: 'Software Engineering',
                     Location: 'Swindon',
-                    Testimonial: "Great experience learning new technology and skills and meeting all the different people"
+                    Testimonial: "I really liked the trainers and the support provided by Nationwide during my learning journey, It is a really good opportunity to take advatage of."
                 },
                 {   Image: 'D',
                     Name: 'Samantha Star',
@@ -40,7 +40,7 @@ export default class SearchBar extends React.Component {
                     Year: 2018,
                     Stream: 'DevOps',
                     Location: 'Swindon',
-                    Testimonial: "Great experience learning new technology and skills and meeting all the different people"
+                    Testimonial: "This is an awesome company to work for, I love the benefits, the work culture and the commitment to my development."
                 },
                 {   Image: 'E',
                     Name: 'Sukhdeep Singh',
@@ -48,7 +48,7 @@ export default class SearchBar extends React.Component {
                     Year: 2016,
                     Stream: 'Software Engineering',
                     Location: 'Swindon',
-                    Testimonial: "Great experience learning new technology and skills and meeting all the different people"
+                    Testimonial: "I think the best thing about Nationwide is they really made me feel at home, it is a very diverse and inclusive company and the training thye provide is really good."
                 },
                 {   Image: 'F',
                     Name: 'Sulayman Sarwar',
@@ -56,7 +56,7 @@ export default class SearchBar extends React.Component {
                     Year: 2019,
                     Stream: 'Software Engineering',
                     Location: 'Swindon',
-                    Testimonial: "Great experience learning new technology and skills and meeting all the different people"
+                    Testimonial: "I started with no tech knowledge and I now I am an engineer with and I feel that my work is important and valued"
                 }
             ],
         }
@@ -114,9 +114,8 @@ export default class SearchBar extends React.Component {
               <div class="col-12">
                 <form
                   method="get"
-                  action="/jobs/#results"
-                  id="job-search"
-                  aria-label="Nationwide job search"
+                  id="casestudies-search"
+                  aria-label="Nationwide casestudies search"
                   role="search"
                 >
                   <div class="form-group main-search-field">
