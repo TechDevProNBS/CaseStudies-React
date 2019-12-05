@@ -8,7 +8,10 @@ export default class Nationwide extends React.Component {
 
         return (
             <div>
-                placeholder
+                <br></br>
+                <center>
+                show profile of selected link
+                </center>
             </div>
         );
     }

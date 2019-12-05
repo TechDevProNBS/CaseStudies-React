@@ -10,7 +10,9 @@ export default class Nationwide extends React.Component {
 
         return (
             <div>
+                <center>
                 placeholder
+                </center>
             </div>
         );
     }

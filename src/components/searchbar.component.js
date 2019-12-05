@@ -239,7 +239,7 @@ export default class SearchBar extends React.Component {
                      {this.state.rec2.map( rec=> 
                         <tr>
                             <td><center><img src={rec.Image} style={{width:"80px", height:"100px"}}></img></center></td>
-                            <td><center> {rec.Name} </center></td>
+                            <td><center><a href= "/full/:var?"> {rec.Name} </a></center></td>
                             <td><center> {rec.Role} </center></td>
                             <td><center> {rec.Stream} </center></td>
                             <td><center> {rec.Location} </center></td>
