@@ -227,7 +227,7 @@ export default class SearchBar extends React.Component {
                 <center>
                 <table>
                     <tr>
-                        <th><center> Image </center></th>
+                        <th style={{width:"80px"}}><center> Image </center></th>
                         <th style={{width:"115px"}}><center> Name </center></th>
                         <th style={{width:"90px"}}><center> Role </center></th>
                         <th style={{width:"90px"}}><center> Stream </center></th>
@@ -238,7 +238,7 @@ export default class SearchBar extends React.Component {
                     </tr>
                      {this.state.rec2.map( rec=> 
                         <tr>
-                            <td><center> {rec.Image} </center></td>
+                            <td style={{height:"100px"}}><center> {rec.Image} </center></td>
                             <td><center> {rec.Name} </center></td>
                             <td><center> {rec.Role} </center></td>
                             <td><center> {rec.Stream} </center></td>
