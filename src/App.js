@@ -14,6 +14,7 @@ export default class Nationwide extends React.Component{
         <Router>
             <div>
                 <Route exact path="/" component={HomePage}/>
+                <Route exact path="/showtable" component={ShowRecords}/>
                 <Route exact path="/full/:var?" component={SingleRecord}/>
                 <Route exact path="/search" component={SearchBar}/>
             </div>
