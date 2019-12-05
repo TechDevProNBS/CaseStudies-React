@@ -4,13 +4,21 @@ import Button from "react-bootstrap/Button";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import magnifying_glass from "./images/magnifying-glass.png";
 
+import varA from "./images/A.jpg";
+import varB from "./images/B.jfif";
+import varC from "./images/C.jpg";
+import varD from "./images/D.jfif";
+import varE from "./images/E.jpg";
+import varF from "./images/F.jpg";
+
+
 export default class SearchBar extends React.Component {
 
     constructor(){
         super();
         this.state = {
            records: [
-                {   Image: "A",
+                {   Image: varA,
                     Name: 'Smythe Smith',
                     Role: "Software Engineer",
                     Year: 2019,
@@ -18,7 +26,7 @@ export default class SearchBar extends React.Component {
                     Location: 'Swindon',
                     Testimonial: "Great experience learning new technology and skills and meeting all the different people."
                 },
-                {   Image: 'B',
+                {   Image: varB,
                     Name: 'Sameena Syed',
                     Role: "DevOps Engineer",
                     Year: 2019,
@@ -26,7 +34,7 @@ export default class SearchBar extends React.Component {
                     Location: 'London',
                     Testimonial: "Found it very difficult but very rewarding, one of the best work places I've ever worked in."
                 },
-                {   Image: 'C',
+                {   Image: varC,
                     Name: 'Shahid Saleem',
                     Role: "Technical Analyst",
                     Year: 2017,
@@ -34,7 +42,7 @@ export default class SearchBar extends React.Component {
                     Location: 'Bournemouth',
                     Testimonial: "I really liked the trainers and the support provided by Nationwide during my learning journey, It is a really good opportunity to take advatage of."
                 },
-                {   Image: 'D',
+                {   Image: varD,
                     Name: 'Samantha Star',
                     Role: "Risk Analyst",
                     Year: 2018,
@@ -42,7 +50,7 @@ export default class SearchBar extends React.Component {
                     Location: 'Swindon',
                     Testimonial: "This is an awesome company to work for, I love the benefits, the work culture and the commitment to my development."
                 },
-                {   Image: 'E',
+                {   Image: varE,
                     Name: 'Sukhdeep Singh',
                     Role: "Business Analyst",
                     Year: 2016,
@@ -50,7 +58,7 @@ export default class SearchBar extends React.Component {
                     Location: 'Northampton',
                     Testimonial: "I think the best thing about Nationwide is they really made me feel at home, it is a very diverse and inclusive company and the training thye provide is really good."
                 },
-                {   Image: 'F',
+                {   Image: varF,
                     Name: 'Sulayman Sarwar',
                     Role: "Data Engineer",
                     Year: 2019,
@@ -230,13 +238,13 @@ export default class SearchBar extends React.Component {
                     </tr>
                      {this.state.rec2.map( rec=> 
                         <tr>
-                            <td style={{height:"100px"}}><center> {rec.Image} </center></td>
+                            <td><center><img src={rec.Image} style={{width:"80px", height:"100px"}}></img></center></td>
                             <td><center> {rec.Name} </center></td>
                             <td><center> {rec.Role} </center></td>
                             <td><center> {rec.Stream} </center></td>
                             <td><center> {rec.Location} </center></td>
                             <td><center> {rec.Year} </center></td>
-                            <td> {rec.Testimonial} </td>
+                            <td> {rec.Testimonial.substring(0,100)+"..."} </td>
                             </tr>
                         )}
                  </table>
