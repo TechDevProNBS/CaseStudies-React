@@ -30,8 +30,8 @@ export default class SearchBar extends React.Component {
                     Name: 'Shahid Saleem',
                     Role: "Technical Analyst",
                     Year: 2017,
-                    Stream: 'Software Engineering',
-                    Location: 'Swindon',
+                    Stream: 'Industrial Placement',
+                    Location: 'Bournemouth',
                     Testimonial: "I really liked the trainers and the support provided by Nationwide during my learning journey, It is a really good opportunity to take advatage of."
                 },
                 {   Image: 'D',
@@ -46,8 +46,8 @@ export default class SearchBar extends React.Component {
                     Name: 'Sukhdeep Singh',
                     Role: "Business Analyst",
                     Year: 2016,
-                    Stream: 'Software Engineering',
-                    Location: 'Swindon',
+                    Stream: 'Cyber Security',
+                    Location: 'Northampton',
                     Testimonial: "I think the best thing about Nationwide is they really made me feel at home, it is a very diverse and inclusive company and the training thye provide is really good."
                 },
                 {   Image: 'F',
@@ -174,13 +174,6 @@ export default class SearchBar extends React.Component {
                           <option value="2018">2018</option>
                           <option value="2017">2017</option>
                           <option value="2016">2016</option>
-                          <option value="2015">2015</option>
-                          <option value="2014">2014</option>
-                          <option value="2013">2013</option>
-                          <option value="2012">2012</option>
-                          <option value="2011">2011</option>
-                          <option value="2010">2010</option>
-                          <option value="2009">2009</option>
                         </select>
                       </div>
                       <div class="form-group col-md-6 col-lg-3">
@@ -196,7 +189,6 @@ export default class SearchBar extends React.Component {
                           <option value="Software Engineering">Software Engineering</option>
                           <option value="DevOps">DevOps</option>
                           <option value="Cyber Security">Cyber Security</option>
-                          <option value="Data and Analytics">Data and Analytics</option>
                           <option value="Industrial Placement">Industrial Placement</option>
                           <option value="Other">Other</option>
                         </select>
