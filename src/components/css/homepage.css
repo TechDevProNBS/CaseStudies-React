@@ -1,0 +1,22 @@
+
+.header-content {
+    margin-bottom: 2rem
+}
+
+@media (min-width:992px) {
+    .header-content {
+        margin-bottom: 5rem
+    }
+}
+.card-title, .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #004a8f;
+    font-family: NBS,Arial,sans-serif;
+}
+.header-content, .intro-content {
+    text-align: center;
+}
+
