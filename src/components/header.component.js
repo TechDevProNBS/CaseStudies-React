@@ -1,8 +1,8 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
+//import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import {Navbar, Nav, NavDropdown, NavItem } from 'react-bootstrap'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import {Navbar, Nav, NavItem } from 'react-bootstrap'
+//import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 export default class Mine extends React.Component{
     render(){
