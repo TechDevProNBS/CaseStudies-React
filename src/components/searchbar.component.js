@@ -95,12 +95,12 @@ export default class SearchBar extends React.Component {
         })
     }
     filterbyanything=()=> {
-            let searchingfor=document.getElementById("filterbysearch").value;
-            var results = this.state.records.filter( fil => ( fil.Name.indexOf(searchingfor) != -1 ||
-                                                              fil.Role.indexOf(searchingfor)!=-1 ||  
-                                                              fil.Location.indexOf(searchingfor)!=-1 ||
-                                                              fil.Testimonial.indexOf(searchingfor)!=-1 ||
-                                                              fil.Stream.indexOf(searchingfor)!=-1 ))
+            let searchingfor=document.getElementById("filterbysearch").value.toUpperCase();
+            var results = this.state.records.filter( fil => ( fil.Name.toUpperCase().indexOf(searchingfor) != -1 ||
+                                                              fil.Role.toUpperCase().indexOf(searchingfor)!=-1 ||  
+                                                              fil.Location.toUpperCase().indexOf(searchingfor)!=-1 ||
+                                                              fil.Testimonial.toUpperCase().indexOf(searchingfor)!=-1 ||
+                                                              fil.Stream.toUpperCase().indexOf(searchingfor)!=-1 ))
             this.setState({
                 rec2: results
             })
