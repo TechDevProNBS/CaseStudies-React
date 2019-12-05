@@ -2,7 +2,9 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import magnifying_glass from "./images/magnifying-glass.png";
+import refresh from "./images/refresh.jpg";
 
 import varA from "./images/A.jpg";
 import varB from "./images/B.jfif";
@@ -74,30 +76,32 @@ export default class SearchBar extends React.Component {
         this.filterbyrole = this.filterbyrole.bind(this);
         this.state.rec2 = this.state.records;
     }
+
     filterbylocation() {
         let l = document.getElementById("filterbylocation").value;
-        var results = this.state.records.filter( fil => (fil.Location == l || l == "" ))
+        var results = this.state.rec2.filter( fil => (fil.Location == l || l == "" ) )
         this.setState({
             rec2: results
         })
     }
+
     filterbystream() {
         let s = document.getElementById("filterbystream").value;
-        var results = this.state.records.filter( fil => (fil.Stream == s || s == "" ))
+        var results = this.state.rec2.filter( fil => (fil.Stream == s || s == "" ))
         this.setState({
             rec2: results
         })
     }
     filterbyyear() {
         let y = document.getElementById("filterbyyear").value;
-        var results = this.state.records.filter( fil => (fil.Year == y || y == "" ))
+        var results = this.state.rec2.filter( fil => (fil.Year == y || y == "" ))
         this.setState({
             rec2: results
         })
     }
     filterbyrole() {
         let r = document.getElementById("filterbyrole").value;
-        var results = this.state.records.filter( fil => (fil.Role == r || r == "" ))
+        var results = this.state.rec2.filter( fil => (fil.Role == r || r == "" ))
         this.setState({
             rec2: results
         })
@@ -112,6 +116,12 @@ export default class SearchBar extends React.Component {
             this.setState({
                 rec2: results
             })
+    }
+    refreshfilters=()=> {
+      var results = this.state.records;
+      this.setState({
+        rec2: results
+    })
     }
   render() {
     return (
@@ -219,6 +229,9 @@ export default class SearchBar extends React.Component {
                           <option value="Data Engineer">Data Engineer</option>
                         </select>
                       </div>
+                      <button type="button" onClick={this.filterbyanything}>
+                        <img src={refresh} width="20" height="22" />
+                      </button>
                     </div>
                     <input type="hidden" name="pagesize" value="50"></input>
                   </div>
