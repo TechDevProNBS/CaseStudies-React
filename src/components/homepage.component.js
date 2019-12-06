@@ -3,6 +3,13 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import './css/homepage.css'
 import markbatesimage from '../images/markbates.jpg'
+import tdpbanner from '../images/stockbanner2.jpg'
+import { classBody } from '@babel/types';
+
+var tdpbannerstyle = {
+  
+    backgroundImage: `url(${tdpbanner})`
+  };
 //import { Navbar, Nav, NavDropdown, NavItem } from 'react-bootstrap';
 //import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -25,7 +32,19 @@ export default class Homepage extends React.Component {
     render() {
 
         return (
-
+            
+            <div className="main">
+            <section className="hero hero-default" style={ tdpbannerstyle }>          
+            <div className="container">
+                <div className="row">
+                    <div className="col-10 col-sm-8 col-lg-7">
+                        <h1 className="hero-heading">Technology Development Programme</h1>
+                            <p>Your future in FinTech starts here</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
 
             <div className="container">
 
@@ -36,21 +55,28 @@ export default class Homepage extends React.Component {
 
                         <div className="container">
                             <div className="cms-content header-content">
-                                <h2 className="h2">The Scheme</h2>
-                                <p>18-month, on-the-job training for graduates, recent graduates and career changers who want to fast-track their way to becoming technical specialists. Expect hard work and a steep learning curve. As well as a competitive salary, performance-based bonus and employee benefits, you get on-the-job training, a first-hand view on how technical teams work together in a large organisation, plus a manager, buddies and mentors to support you throughout. If you’re ambitious, collaborative and logically minded, you’ll fit right in.</p>
+                                <h2 className="h2">About the scheme</h2>
+                                <p>
+                              
+                                    18 months, on-the-job training for graduates, recent graduates and career changers who want to fast-track their way to becoming technical specialists. 
+                                    You could be promoted into a technical specialist role in an area such as Software Engineering, Security, Infrastructure or Online/Mobile Banking. 
+                                    </p>
                             </div>
                         </div>
+
+                        
 
                         <div className="container">
                             <div className="row m-2">
                                 <div className="card mb-3" style={{ maxWidth: "1040px" }}>
                                     <div className="row no-gutters">
-                                        <div className="col-md-4" style={{ maxWidth: "250px" }}>
-                                            <img src={markbatesimage} style={{ borderStyle: "solid", borderColor: "black", borderWidth: "1px"}}  className="card-img" alt="(EC) TDP ACCELERATOR 1" />
+                                        <div className="img-fluid float-lg-right ml-lg-4 mb-3" style={{ maxWidth: "250px" }}>
+                                            <img src={markbatesimage}   className="card-img" alt="(EC) TDP ACCELERATOR 1" />
                                         </div>
                                         <div className="col-md-8">
                                             <div className="card-body">
-                                                <h5 className="card-title"><b>Mark Bates</b></h5>
+                                            {/* card-title */}
+                                                <h5 className="py-3"><b>Mark Bates</b></h5>
 
                                                 <p className="card-text">
                                                 Mark is the Technology Development Programme Manager for the Nationwide ‘Technology Development Programme’ and has been at Nationwide in various roles, including: Training Portfolio Manager, and Operations Manager. He also ran his own business.
@@ -81,12 +107,12 @@ export default class Homepage extends React.Component {
                                 </div>
                             </div>
 
-
+{/* 
                         <div className="container">
                             <div className="row image-text-block cms-content align-items-center ">
                                 
                                 <div className="col-md-6">
-                                <img alt="(EC) TDP ACCELERATOR 1" classNames="img-fluid" height="337" src={markbatesimage} width="538" />
+                                <img alt="TDP ACCELERATOR" className="img-fluid" height="337" src={markbatesimage} width="538" />
                                     <div className="py-3">
                                         <h2>Mark Bates</h2>
                                         <p>
@@ -103,7 +129,7 @@ export default class Homepage extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
 
 
@@ -114,7 +140,7 @@ export default class Homepage extends React.Component {
             </div>
 
 
-
+            </div>
 
 
         );
