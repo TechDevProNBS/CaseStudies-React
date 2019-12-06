@@ -1,16 +1,13 @@
 import React from 'react';
 //import Form from 'react-bootstrap/Form';
 import { Redirect } from 'react-router-dom';
-<<<<<<< HEAD
 import { Navbar, Nav, NavDropdown, NavItem } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './css/homepage.css'
 import markbatesimage from '../images/markbates.jpg'
 
-=======
 //import { Navbar, Nav, NavDropdown, NavItem } from 'react-bootstrap';
 //import { BrowserRouter as Router, Route, Link } from "react-router-dom";
->>>>>>> developer
 
 export default class Homepage extends React.Component {
 
