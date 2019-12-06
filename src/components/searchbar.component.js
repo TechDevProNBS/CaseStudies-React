@@ -1,6 +1,6 @@
 import React from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+//import Form from "react-bootstrap/Form";
+//import Button from "react-bootstrap/Button";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import magnifying_glass from "./images/magnifying-glass.png";
@@ -126,28 +126,28 @@ export default class SearchBar extends React.Component {
   render() {
     return (
       <div>
-        <div class="casestudy-search">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
+        <div className="casestudy-search">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
                 <form
                   method="get"
                   id="casestudies-search"
                   aria-label="Nationwide casestudies search"
                   role="search"
                 >
-                  <div class="form-group main-search-field">
-                    <label class="sr-only" for="main-search-field">
+                  <div className="form-group main-search-field">
+                    <label className="sr-only" for="main-search-field">
                       Search Keywords
                     </label>
-                    <span class="input-group m-2">
+                    <span className="input-group m-2">
                       <input
                         id="filterbysearch"
                         style={{ width: "90%", marginRight: "2px" }}
                         type="search"
                         name="search"
                         placeholder="Search Case Studies"
-                        class="form-control"
+                        className="form-control"
                         maxlength="100"
                         autocomplete="off"
                         minlength="2"
@@ -158,13 +158,13 @@ export default class SearchBar extends React.Component {
                       </button>
                     </span>
                   </div>
-                  <div class="collapse show" id="toggle-search">
+                  <div className="collapse show" id="toggle-search">
                     <p>Filters</p>
-                    <div class="row clear">
-                      <div class="form-group col-md-6 col-lg-3">
+                    <div className="row clear">
+                      <div className="form-group col-md-6 col-lg-3">
                         <label for="location">Location</label>
                         <select
-                          class="form-control"
+                          className="form-control"
                           name="location"
                           id="filterbylocation"
                           aria-label="Select location"
@@ -177,10 +177,10 @@ export default class SearchBar extends React.Component {
                           <option value="Northampton">Northampton</option>
                         </select>
                       </div>
-                      <div class="form-group col-md-6 col-lg-2">
+                      <div className="form-group col-md-6 col-lg-2">
                         <label for="Year">Year</label>
                         <select
-                          class="form-control"
+                          className="form-control"
                           name="year"
                           id="filterbyyear"
                           aria-label="Select the Year"
@@ -194,10 +194,10 @@ export default class SearchBar extends React.Component {
                           <option value="2016">2016</option>
                         </select>
                       </div>
-                      <div class="form-group col-md-6 col-lg-3">
+                      <div className="form-group col-md-6 col-lg-3">
                         <label for="stream">Stream</label>
                         <select
-                          class="form-control"
+                          className="form-control"
                           name="stream"
                           id="filterbystream"
                           aria-label="Select Stream"
@@ -211,10 +211,10 @@ export default class SearchBar extends React.Component {
                           <option value="Other">Other</option>
                         </select>
                       </div>
-                      <div class="form-group col-md-6 col-lg-3">
+                      <div className="form-group col-md-6 col-lg-3">
                         <label for="contract-type">Roles</label>
                         <select
-                          class="form-control"
+                          className="form-control"
                           name="contract"
                           id="filterbyrole"
                           aria-label="Select contract type"
@@ -249,7 +249,7 @@ export default class SearchBar extends React.Component {
                         <th style={{width:"600px"}}><center> Testimonial </center></th>
                         <th></th>
                     </tr>
-                     {this.state.rec2.map( rec=> 
+                     {/*this.state.rec2.map( rec=> 
                         <tr>
                             <td><center><img src={rec.Image} style={{width:"80px", height:"100px"}}></img></center></td>
                             <td><center><a href= "/full/:var?"> {rec.Name} </a></center></td>
@@ -259,7 +259,7 @@ export default class SearchBar extends React.Component {
                             <td><center> {rec.Year} </center></td>
                             <td> {rec.Testimonial.substring(0,100)+"..."} </td>
                             </tr>
-                        )}
+                     )*/}
                  </table>
                 </center>
                 <br></br>
