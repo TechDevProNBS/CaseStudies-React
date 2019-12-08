@@ -34,45 +34,36 @@ export default class Mine extends React.Component {
         };
     }
 
-    componentDidMount = () => {
-        console.log("eh"+this.props.match.params.var)
-        fetch(`http://localhost:9011/record`,{
-            method: 'GET'})
-            .then(response => response.json())
-            .then(data => {
-                this.setState({
-                    employee: data  
-                });
-                var fil = this.props.match.params.var;
-                var datapre = data;
-                console.log(data)
-                const datafiltered = data.filter(d => d.id == fil);
-                console.log(datafiltered);
-                {datafiltered.map(d => {
-                    this.setState({
-                        id: d.id,
-                        name: d.name,
-                        districtdescription: d.districtdescription,
-                        stream: d.stream,
-                        startdate: d.startdate,
-                        background: d.background,
-                        maintext: d.maintext,
-                        email: d.email,
-                        facebook: d.facebook,
-                        linkedin: d.linkedin,
-                        twitter:d.twitter,
-                        photo: d.photo,
-                        area: d.area,
-                        internalexternal: d.internalexternal,
-                        locationdescription: d.locationdescription,
-                        programme: d.programme
-                    });
-                })};
-                console.log(this.state);
-                console.log("name is :"+this.state.employee)
-                }, () => {console.log(this.state);
-                     })
-    }
+    // componentDidMount = () => {
+    //     console.log("eh"+this.props.match.params.var)
+    //     let url = "http://localhost:8000/showsingle/"+this.props.match.params.var;
+    //     fetch(url)
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             this.setState({
+    //                 employee: data  
+    //             });
+    //             {data.map(d => {
+    //                 this.setState({
+    //                     id: d.id,
+    //                     name: d.name,
+    //                     currentRole: d.currentRole,
+    //                     stream: d.stream,
+    //                     startDate: d.startDate,
+    //                     background: d.background,
+    //                     mainText: d.mainText,
+    //                     email: d.email,
+    //                     facebook: d.facebook,
+    //                     linkedin: d.linkedin,
+    //                     twitter:d.twitter,
+    //                     photo: d.photo
+    //                 });
+    //             })};
+    //             console.log(this.state);
+    //             console.log("name is :"+this.state.employee)
+    //             }, () => {console.log(this.state);
+    //                  })
+    // }
 
     state = {
         redirect: false
@@ -122,7 +113,6 @@ export default class Mine extends React.Component {
         console.log('Was this called');
 
             let data = {
-                "id": this.state.id,
                 "name": this.state.name,
                 "startdate": this.state.startdate,
                 "districtdescription": this.state.districtdescription,
@@ -143,7 +133,7 @@ export default class Mine extends React.Component {
             console.log(JSON.stringify(data) + "attempted to be created")
 
             fetch(`http://localhost:9011/record`, {
-                method: 'PUT',
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -153,7 +143,7 @@ export default class Mine extends React.Component {
                 .then(response => {
 
                     if (response.status === 200) {
-                        console.log('Employee Updated');
+                        console.log('Employee Added');
                         window.location.replace(`/admin`);
                     } else {
                         alert('Failed to update employee');
@@ -165,7 +155,7 @@ export default class Mine extends React.Component {
         
             return (
                 <div>
-                    <font face="calibri" color="red"><b>You are now logged in as an Administrator. This allows you to create, edit or delete records from this page.</b><br/></font>
+                    <font face="calibri" color="red"><b>You are now logged in as an Administrator. This allows you to create, edit or delete records from this page.</b><br/>Create a new Profile:<br/></font>
                     <font face="calibri">
                     {this.renderRedirect()}
                     <button onClick={this.setRedirect}>Back</button>                    
@@ -181,7 +171,7 @@ export default class Mine extends React.Component {
                                         </div>
                                         <div >
                                             <div className="card-body">
-                                                <b>Name: </b><br/>
+                                            <b>Name: </b><br/>
                                                 <input type="text" maxLength="20" size="20" defaultValue={this.state.name} onChange={this.commonChange} name="name"/><br/>
                                                 <b>Programme:</b><br/>
                                                 <input type="text" maxLength="20" size="20" defaultValue={this.state.programme} onChange={this.commonChange} name="programme"/><br/>

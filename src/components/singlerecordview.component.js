@@ -19,15 +19,34 @@ export default class Mine extends React.Component {
 
     componentDidMount = () => {
         console.log("eh"+this.props.match.params.var)
-        let url = "http://localhost:8000/showsingle/"+this.props.match.params.var;
-        fetch(url)
+        fetch(`http://localhost:9011/record`,{
+            method: 'GET'})
             .then(response => response.json())
             .then(data => {
+                var fil = this.props.match.params.var;
+                const datafiltered = data.filter(d => d.id == fil);
                 this.setState({
-                    employee: data
-                }, () => { /*console.log(this.state);*/ })
-            })
+                    employee: datafiltered  
+                });
+                var datapre = data;
+                console.log(data)
+                console.log(datafiltered);    
+                }, () => {console.log(this.state);
+                     })
     }
+
+
+    // componentDidMount = () => {
+    //     console.log("eh"+this.props.match.params.var)
+    //     let url = "http://localhost:8000/showsingle/"+this.props.match.params.var;
+    //     fetch(url)
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             this.setState({
+    //                 employee: data
+    //             }, () => { /*console.log(this.state);*/ })
+    //         })
+    // }
 
     state = {
         redirect: false
@@ -62,13 +81,17 @@ export default class Mine extends React.Component {
                                         <div >
                                             <div className="card-body">
                                                 <h5 className="card-title"><b>{data.name}</b></h5>
-                                                <div style={{}}className="card-text"><b>Current Role:</b> {data.currentRole}</div>
+                                                <div style={{}}className="card-text"><b>Programme:</b> {data.programme}</div>
+                                                <div style={{}}className="card-text"><b>Current Role:</b> {data.districtdescription}</div>
                                                 <div style={{}}className="card-text"><b>Stream:</b> {data.stream}</div>
-                                                <div style={{}}className="card-text"><b>Start Date:</b> {data.startDate}</div><br/>
+                                                <div style={{}}className="card-text"><b>Start Date:</b> {data.startdate}</div>
+                                                <div style={{}}className="card-text"><b>Area:</b> {data.area}</div>
+                                                <div style={{}}className="card-text"><b>Internal/External:</b> {data.internalexternal}</div>
+                                                <div style={{}}className="card-text"><b>Location:</b> {data.locationdescription}</div><br/>
                                                 <p className="card-text">
                                                 <b>Background: </b>{data.background}<br/><span></span></p>
                                                 <p className="card-text">
-                                                {data.mainText}<br/>
+                                                {data.maintext}<br/>
                                                 </p>
                                                 <p className="card-text">
                                                     <b>Contact Me:</b><br/>

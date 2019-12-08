@@ -18,7 +18,8 @@ export default class Mine extends React.Component {
     }
 
     componentDidMount = () => {
-        fetch(`http://localhost:8000/showall`)
+        fetch(`http://localhost:9011/record`,{
+            method: 'GET'})
             .then(response => response.json())
             .then(data => {
                 this.setState({
@@ -35,10 +36,25 @@ export default class Mine extends React.Component {
           redirect: true
         })
       }
+      setRedirect2 = () => {
+        this.setState({
+          redirect2: true
+        })
+      }
       renderRedirect = () => {
         if (this.state.redirect) {
             console.log(this.props.value+this.props.key+this.props.id)
-            let url = '/adminfull/' + this.state.id;
+            //let url = '/adminfull/' + this.state.id;
+            let url = '/newprofile';
+          return <Redirect to={url} />
+        }
+      }
+
+      renderRedirect2 = () => {
+        if (this.state.redirect2) {
+            console.log(this.props.value+this.props.key+this.props.id)
+            //let url = '/newprofile';
+            let url = '/viewprofiles/adminfullview/' + this.state.id;
           return <Redirect to={url} />
         }
       }
@@ -48,13 +64,13 @@ export default class Mine extends React.Component {
         let data = {
             "id": _id
         }
-        console.log(JSON.stringify(data) + " " + _id)
-        fetch(`http://localhost:8000/deleterecord`, {
-            method: 'Delete',
+        console.log(JSON.stringify(data))
+        fetch(`http://localhost:9011/record`, {
+            method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(_id)
 
         })
 
@@ -67,9 +83,11 @@ export default class Mine extends React.Component {
             return (
                 <div>
                     <font face="calibri" color="red"><b>You are now logged in as an Administrator. This allows you to create, edit or delete profile from this page.<br/>To edit a profile, please click "View/Edit Profile".</b><br/>
-                    <button>Add New Profile</button>
+                    
                     </font>
                     <font face="calibri">
+                    {this.renderRedirect()}
+                                                <button onClick={()=>{this.setRedirect()}} id={1}>Add New Profile</button>
                             {this.state.employee.map(data => {
                                 return (
                             <div className="container" key={data.id}>
@@ -82,16 +100,17 @@ export default class Mine extends React.Component {
                                         <div className="col-md-8">
                                             <div className="card-body">
                                                 <h5 className="card-title"><b>{data.name}</b></h5>
-                                                <div style={{}}className="card-text"><b>Current Role:</b> {data.currentRole}</div>
+                                                <div style={{}}className="card-text"><b>Programme:</b> {data.programme}</div>
+                                                <div style={{}}className="card-text"><b>Current Role:</b> {data.districtdescription}</div>
                                                 <div style={{}}className="card-text"><b>Stream:</b> {data.stream}</div>
-                                                <div style={{}}className="card-text"><b>Start Date:</b> {data.startDate}</div><br/>
+                                                <div style={{}}className="card-text"><b>Start Date:</b> {data.startdate}</div><br/>
                                                 <p className="card-text">
                                                 <b>Background: </b>{data.background}<br/><span></span></p>
                                                 <p className="card-text">
-                                                {data.mainText.substring(0,250)}...<br/>
+                                                {data.maintext.substring(0,250)}...<br/>
                                                 </p>
-                                                {this.renderRedirect()}
-                                                <button onClick={()=>{this.setState({id:data.id});console.log("here"+data.id); this.setRedirect()}} id={data.id}>View/Edit Profile</button>
+                                                {this.renderRedirect2()}
+                                                <button onClick={()=>{this.setState({id:data.id});console.log("here"+data.id); this.setRedirect2()}} id={data.id}>View/Edit Profile</button>
                                                 <button onClick={()=>{this.deleteRecord(data.id)}} id={data.id}>Delete Profile</button>
                                             </div>
                                         </div>

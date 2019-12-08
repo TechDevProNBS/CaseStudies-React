@@ -1,7 +1,7 @@
 import React from "react";
 //import Form from "react-bootstrap/Form";
 //import Button from "react-bootstrap/Button";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+//import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import magnifying_glass from "./images/magnifying-glass.png";
 import refresh from "./images/refresh.jpg";
@@ -79,7 +79,7 @@ export default class SearchBar extends React.Component {
 
     filterbylocation() {
         let l = document.getElementById("filterbylocation").value;
-        var results = this.state.rec2.filter( fil => (fil.Location == l || l == "" ) )
+        var results = this.state.rec2.filter( fil => (fil.Location === l || l === "" ) )
         this.setState({
             rec2: results
         })
@@ -87,32 +87,32 @@ export default class SearchBar extends React.Component {
 
     filterbystream() {
         let s = document.getElementById("filterbystream").value;
-        var results = this.state.rec2.filter( fil => (fil.Stream == s || s == "" ))
+        var results = this.state.rec2.filter( fil => (fil.Stream === s || s === "" ))
         this.setState({
             rec2: results
         })
     }
     filterbyyear() {
         let y = document.getElementById("filterbyyear").value;
-        var results = this.state.rec2.filter( fil => (fil.Year == y || y == "" ))
+        var results = this.state.rec2.filter( fil => (fil.Year === y || y === "" ))
         this.setState({
             rec2: results
         })
     }
     filterbyrole() {
         let r = document.getElementById("filterbyrole").value;
-        var results = this.state.rec2.filter( fil => (fil.Role == r || r == "" ))
+        var results = this.state.rec2.filter( fil => (fil.Role === r || r === "" ))
         this.setState({
             rec2: results
         })
     }
     filterbyanything=()=> {
             let searchingfor=document.getElementById("filterbysearch").value.toUpperCase();
-            var results = this.state.records.filter( fil => ( fil.Name.toUpperCase().indexOf(searchingfor) != -1 ||
-                                                              fil.Role.toUpperCase().indexOf(searchingfor)!=-1 ||  
-                                                              fil.Location.toUpperCase().indexOf(searchingfor)!=-1 ||
-                                                              fil.Testimonial.toUpperCase().indexOf(searchingfor)!=-1 ||
-                                                              fil.Stream.toUpperCase().indexOf(searchingfor)!=-1 ))
+            var results = this.state.records.filter( fil => ( fil.Name.toUpperCase().indexOf(searchingfor) !== -1 ||
+                                                              fil.Role.toUpperCase().indexOf(searchingfor)!== -1 ||  
+                                                              fil.Location.toUpperCase().indexOf(searchingfor)!== -1 ||
+                                                              fil.Testimonial.toUpperCase().indexOf(searchingfor)!== -1 ||
+                                                              fil.Stream.toUpperCase().indexOf(searchingfor)!== -1 ))
             this.setState({
                 rec2: results
             })
@@ -148,13 +148,13 @@ export default class SearchBar extends React.Component {
                         name="search"
                         placeholder="Search Case Studies"
                         className="form-control"
-                        maxlength="100"
-                        autocomplete="off"
-                        minlength="2"
+                        maxLength="100"
+                        autoComplete="off"
+                        minLength="2"
                         onChange= {this.filterbyanything}
                       />
                       <button type="button" onClick={this.filterbyanything}>
-                        <img src={magnifying_glass} width="20" height="20" />
+                        <img src={magnifying_glass} width="20" height="20" alt="magnifying glass"/>
                       </button>
                     </span>
                   </div>
@@ -178,7 +178,7 @@ export default class SearchBar extends React.Component {
                         </select>
                       </div>
                       <div className="form-group col-md-6 col-lg-2">
-                        <label for="Year">Year</label>
+                        <label for="Year">Start Date</label>
                         <select
                           className="form-control"
                           name="year"
@@ -187,11 +187,14 @@ export default class SearchBar extends React.Component {
                           title="Search Year"
                           onChange = {this.filterbyyear}
                         >
-                          <option value="" selected="selected">Select Year</option>
-                          <option value="2019">2019</option>
-                          <option value="2018">2018</option>
-                          <option value="2017">2017</option>
-                          <option value="2016">2016</option>
+                          <option value="" selected="selected">Select Start Date</option>
+                          <option value="Sep 2015">Sep 2015</option>
+                          <option value="Sep 2016">Sep 2016</option>
+                          <option value="Sep 2017">Sep 2017</option>
+                          <option value="Sep 2018">Sep 2018</option>
+                          <option value="May 2019">May 2019</option>
+                          <option value="Sep 2019">Sep 2019</option>
+                          <option value="Sep 2020">Sep 2020</option>
                         </select>
                       </div>
                       <div className="form-group col-md-6 col-lg-3">
@@ -230,7 +233,7 @@ export default class SearchBar extends React.Component {
                         </select>
                       </div>
                       <button type="button" onClick={this.filterbyanything}>
-                        <img src={refresh} width="20" height="22" />
+                        <img src={refresh} width="20" height="22" alt="refresh icon"/>
                       </button>
                     </div>
                     <input type="hidden" name="pagesize" value="50"></input>
@@ -238,7 +241,8 @@ export default class SearchBar extends React.Component {
                 </form>
                 <br></br>
                 <center>
-                <table>
+                {/*<table>
+                  <tbody>
                     <tr>
                         <th style={{width:"80px"}}><center> Image </center></th>
                         <th style={{width:"115px"}}><center> Name </center></th>
@@ -249,7 +253,7 @@ export default class SearchBar extends React.Component {
                         <th style={{width:"600px"}}><center> Testimonial </center></th>
                         <th></th>
                     </tr>
-                     {/*this.state.rec2.map( rec=> 
+                     this.state.rec2.map( rec=> 
                         <tr>
                             <td><center><img src={rec.Image} style={{width:"80px", height:"100px"}}></img></center></td>
                             <td><center><a href= "/full/:var?"> {rec.Name} </a></center></td>
@@ -259,8 +263,9 @@ export default class SearchBar extends React.Component {
                             <td><center> {rec.Year} </center></td>
                             <td> {rec.Testimonial.substring(0,100)+"..."} </td>
                             </tr>
-                     )*/}
-                 </table>
+                     )
+                     </tbody>
+                 </table>*/}
                 </center>
                 <br></br>
               </div>
