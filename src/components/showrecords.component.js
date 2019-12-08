@@ -19,7 +19,8 @@ export default class Mine extends React.Component {
     }
 
     componentDidMount = () => {
-        fetch(`http://localhost:8000/showall`)
+        fetch(`http://localhost:9011/record`,{
+            method: 'GET'})
             .then(response => response.json())
             .then(data => {
                 this.setState({
@@ -39,7 +40,7 @@ export default class Mine extends React.Component {
       renderRedirect = () => {
         if (this.state.redirect) {
             console.log(this.props.value+this.props.key+this.props.id)
-            let url = '/full/' + this.state.id;
+            let url = '/viewprofiles/fullview/' + this.state.id;
           return <Redirect to={url} />
         }
       }
@@ -62,13 +63,14 @@ export default class Mine extends React.Component {
                                         <div className="col-md-8">
                                             <div className="card-body">
                                                 <h5 className="card-title"><b>{data.name}</b></h5>
-                                                <div style={{}}className="card-text"><b>Current Role:</b> {data.currentRole}</div>
+                                                <div style={{}}className="card-text"><b>Programme:</b> {data.programme}</div>
+                                                <div style={{}}className="card-text"><b>Current Role:</b> {data.districtdescription}</div>
                                                 <div style={{}}className="card-text"><b>Stream:</b> {data.stream}</div>
-                                                <div style={{}}className="card-text"><b>Start Date:</b> {data.startDate}</div><br/>
+                                                <div style={{}}className="card-text"><b>Start Date:</b> {data.startdate}</div><br/>
                                                 <p className="card-text">
                                                 <b>Background: </b>{data.background}<br/><span></span></p>
                                                 <p className="card-text">
-                                                {data.mainText.substring(0,250)}...<br/>
+                                                {data.maintext.substring(0,250)}...<br/>
                                                 </p>
                                                 {this.renderRedirect()}
                                                 <button onClick={()=>{this.setState({id:data.id});console.log("here"+data.id); this.setRedirect()}} id={data.id}>View Full Profile</button>

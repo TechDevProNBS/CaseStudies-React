@@ -24,7 +24,7 @@ export default class Mine extends React.Component {
                         <a className="header-btn header-home" href="/" aria-label="Home" id="js-home">
                             <span>Home</span>
                         </a>
-                        <a className="header-btn header-home" href="/showtable" aria-label="Home" id="js-home">
+                        <a className="header-btn header-home" href="/viewprofiles" aria-label="Home" id="js-home">
                             <span>TDP Profiles</span>
                         </a>
                         <a className="header-btn" href="/login">
