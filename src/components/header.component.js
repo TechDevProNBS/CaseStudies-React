@@ -8,6 +8,35 @@ import logoimage from '../images/logo.png'
 //import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 export default class Mine extends React.Component {
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+            LoginButton: ""
+        };
+    }
+
+    componentDidMount = () => {
+        fetch(`http://localhost:4500/logincheck`,{
+            method: 'GET'})
+            .then(response => response.json())
+            .then(data => {
+                var show = "";
+                console.log(data.loggedin);
+                if (data.loggedin == "true") {
+                    show = <a className="header-btn" href="/logout"><span>Logout</span></a>;
+                    console.log("logged in");
+                  } else {
+                    show = <a className="header-btn" href="/login"><span>Login</span></a>;
+                    console.log("not logged in");
+                  }
+                this.setState({
+                    LoginButton: show 
+                }, () => { console.log(this.state.view); })
+            })
+    }
+
     render() {
         return (
             <div>
@@ -27,10 +56,7 @@ export default class Mine extends React.Component {
                         <a className="header-btn header-home" href="/viewprofiles" aria-label="Home" id="js-home">
                             <span>TDP Profiles</span>
                         </a>
-                        <a className="header-btn" href="/login">
-
-                            <span>Login</span>
-                        </a>
+                        {this.state.LoginButton}
 
                     </div >
                 </div>

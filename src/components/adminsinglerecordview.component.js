@@ -36,42 +36,59 @@ export default class Mine extends React.Component {
 
     componentDidMount = () => {
         console.log("eh"+this.props.match.params.var)
-        fetch(`http://localhost:9011/record`,{
+        fetch(`http://localhost:4500/logincheck`,{
             method: 'GET'})
             .then(response => response.json())
             .then(data => {
+                var show = "";
+                console.log(data.loggedin);
+                if (data.loggedin == "false") {
+                    window.location.replace(`/viewprofiles`);
+                  }
                 this.setState({
-                    employee: data  
-                });
-                var fil = this.props.match.params.var;
-                var datapre = data;
-                console.log(data)
-                const datafiltered = data.filter(d => d.id == fil);
-                console.log(datafiltered);
-                {datafiltered.map(d => {
-                    this.setState({
-                        id: d.id,
-                        name: d.name,
-                        districtdescription: d.districtdescription,
-                        stream: d.stream,
-                        startdate: d.startdate,
-                        background: d.background,
-                        maintext: d.maintext,
-                        email: d.email,
-                        facebook: d.facebook,
-                        linkedin: d.linkedin,
-                        twitter:d.twitter,
-                        photo: d.photo,
-                        area: d.area,
-                        internalexternal: d.internalexternal,
-                        locationdescription: d.locationdescription,
-                        programme: d.programme
-                    });
-                })};
-                console.log(this.state);
-                console.log("name is :"+this.state.employee)
-                }, () => {console.log(this.state);
-                     })
+                    view: show 
+                }, () => { 
+                    console.log(this.state.view); 
+                    fetch(`http://localhost:9011/record`,{
+                        method: 'GET'})
+                        .then(response => response.json())
+                        .then(data => {
+                            this.setState({
+                                employee: data  
+                            });
+                            var fil = this.props.match.params.var;
+                            var datapre = data;
+                            console.log(data)
+                            const datafiltered = data.filter(d => d.id == fil);
+                            console.log(datafiltered);
+                            {datafiltered.map(d => {
+                                this.setState({
+                                    id: d.id,
+                                    name: d.name,
+                                    districtdescription: d.districtdescription,
+                                    stream: d.stream,
+                                    startdate: d.startdate,
+                                    background: d.background,
+                                    maintext: d.maintext,
+                                    email: d.email,
+                                    facebook: d.facebook,
+                                    linkedin: d.linkedin,
+                                    twitter:d.twitter,
+                                    photo: d.photo,
+                                    area: d.area,
+                                    internalexternal: d.internalexternal,
+                                    locationdescription: d.locationdescription,
+                                    programme: d.programme
+                                });
+                            })};
+                            console.log(this.state);
+                            console.log("name is :"+this.state.employee)
+                            }, () => {console.log(this.state);
+                                 })
+                
+                })
+            })
+        
     }
 
     state = {
@@ -84,7 +101,7 @@ export default class Mine extends React.Component {
       }
       renderRedirect = () => {
         if (this.state.redirect) {
-          return <Redirect to='/admin' />
+          return <Redirect to='/viewprofiles' />
         }
       }
 

@@ -12,12 +12,38 @@ import ShowRecords from './showrecords.component.js';
 import AdminShowRecords from './adminshowrecords.component.js';
 
 export default class Mine extends React.Component {
-    //<AdminShowRecords/>
+    constructor(props){
+        super(props);
+
+        this.state = {
+            view: ""
+        };
+    }
+
+    componentDidMount = () => {
+        fetch(`http://localhost:4500/logincheck`,{
+            method: 'GET'})
+            .then(response => response.json())
+            .then(data => {
+                var show = "";
+                console.log(data.loggedin);
+                if (data.loggedin == "true") {
+                    show = <AdminShowRecords/>;
+                    console.log("logged in");
+                  } else {
+                    show = <ShowRecords/>;
+                    console.log("not logged in");
+                  }
+                this.setState({
+                    view: show 
+                }, () => { console.log(this.state.view); })
+            })
+    }
+
     render() {
             return (
                 <div>
-                    <ShowRecords/>
-                    
+                    {this.state.view}
                 </div>
             );
         }
