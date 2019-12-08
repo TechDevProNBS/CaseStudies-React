@@ -14,6 +14,19 @@ export default class Login extends React.Component {
         };
     }
 
+    componentDidMount = () => {
+        fetch(`http://localhost:4500/logincheck`,{
+            method: 'GET'})
+            .then(response => response.json())
+            .then(data => {
+                var show = "";
+                console.log(data.loggedin);
+                if (data.loggedin == "true") {
+                    window.location.replace(`/viewprofiles`)
+            }
+        })
+    }
+
     setRedirect = () => {
         this.setState({
             redirect: true
@@ -22,7 +35,7 @@ export default class Login extends React.Component {
 
     renderRedirect = () => {
         if (this.state.redirect) {
-            return <Redirect to='/showrecords' />
+            return <Redirect to='/viewprofiles' />
         }
     }
 
@@ -43,15 +56,16 @@ export default class Login extends React.Component {
                 if (data.username !== undefined) {
                     console.log('Success');
 
-                    localStorage.setItem('name', data.name);
-                    localStorage.setItem('username', data.username);
-                    localStorage.setItem('role', data.role);
+                    //localStorage.setItem('name', data.name);
+                    //localStorage.setItem('username', data.username);
+                    //localStorage.setItem('role', data.role);
 
-                    console.log(localStorage.getItem('name') + ' Saved name');
-                    console.log(localStorage.getItem('username') + ' Saved user');
-                    console.log(localStorage.getItem('role') + ' Saved role');
+                    //console.log(localStorage.getItem('name') + ' Saved name');
+                    //console.log(localStorage.getItem('username') + ' Saved user');
+                    //console.log(localStorage.getItem('role') + ' Saved role');
 
-                    this.setRedirect();
+                    //this.setRedirect();
+                    window.location.replace(`/viewprofiles`)
                 }
                 else {
                     alert('Login Failed');

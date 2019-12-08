@@ -65,6 +65,24 @@ export default class Mine extends React.Component {
     //                  })
     // }
 
+    componentDidMount = () => {
+        console.log("eh"+this.props.match.params.var)
+        fetch(`http://localhost:4500/logincheck`,{
+            method: 'GET'})
+            .then(response => response.json())
+            .then(data => {
+                var show = "";
+                console.log(data.loggedin);
+                if (data.loggedin == "false") {
+                    window.location.replace(`/viewprofiles`);
+                  }
+                this.setState({
+                    view: show 
+                }, () => { 
+                    console.log(this.state.view); })
+            })
+    }
+
     state = {
         redirect: false
       }
@@ -75,7 +93,7 @@ export default class Mine extends React.Component {
       }
       renderRedirect = () => {
         if (this.state.redirect) {
-          return <Redirect to='/admin' />
+          return <Redirect to='/viewprofiles' />
         }
       }
 
