@@ -12,9 +12,9 @@ export default class Mine extends React.Component {
         return (
             <div>
 
-                {/* <header class="header" id="header"> */}
-                {/* <div class="container"> */}
-                {/* <div class="row"> */}
+                <header class="header" id="header">
+                <div class="container">
+                <div class="row">
                 <div className="col-12">
                     <a className="logo d-none d-lg-inline-block" href="/"><img src={logoimage} className="img-fluid" alt="Nationwide Building Society" width="130" height="52"></img>
                         <a className="logo d-lg-none" href="/"><img src="/images/logo-mobile.png" className="img-fluid" alt="Nationwide Building Society" width="45" height="45"></img>
@@ -35,10 +35,10 @@ export default class Mine extends React.Component {
                     </div >
                 </div>
 
-                {/* </div> */}
-                {/* </div> */}
+                </div>
+                </div>
 
-                {/* </header> */}
+                </header>
 
             </div>
 
