@@ -41,9 +41,9 @@ export default class Mine extends React.Component {
         return (
             <div>
 
-                <header class="header" id="header">
-                <div class="container">
-                <div class="row">
+                <header className="header" id="header">
+                <div className="container">
+                <div className="row">
                 <div className="col-12">
                     <a className="logo" href="/"><img src={logoimage} className="img-fluid" alt="Nationwide Building Society" width="130" height="52"></img>
                     </a>

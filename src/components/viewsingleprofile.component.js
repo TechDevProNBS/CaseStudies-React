@@ -9,7 +9,7 @@ import React from 'react';
 //import { Redirect } from 'react-router-dom';
 //import SearchBar from './searchbar.component.js';
 import ViewSingleProfile from './viewsingleprofile.component.js';
-import AdminSingleRecordView from './adminsinglerecordview.component.js';
+//import AdminSingleRecordView from './adminsinglerecordview.component.js';
 
 export default class Mine extends React.Component {
     //<AdminSingleRecordView/>
