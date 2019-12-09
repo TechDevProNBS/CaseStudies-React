@@ -171,7 +171,7 @@ export default class Mine extends React.Component {
 
                     if (response.status === 200) {
                         console.log('Employee Updated');
-                        window.location.replace(`/admin`);
+                        window.location.replace(`/viewprofiles`);
                     } else {
                         alert('Failed to update employee');
                     };
@@ -204,8 +204,8 @@ export default class Mine extends React.Component {
                                                 <input type="text" maxLength="20" size="20" defaultValue={this.state.programme} onChange={this.commonChange} name="programme"/><br/>
                                                 <b>Current Role:</b><br/>
                                                 <input type="text" maxLength="20" size="20" value={this.state.districtdescription} onChange={this.commonChange} name="districtdescription"/><br/>
-                                                <b>Stream:</b><br/>
-                                                <input type="text" maxLength="20" size="20" value={this.state.stream} onChange={this.commonChange} name="streamo"/><br/>
+                                                {/*<b>Stream:</b><br/>
+                                                <input type="text" maxLength="20" size="20" value={this.state.stream} onChange={this.commonChange} name="streamo"/><br/>*/}
                                                 <div>
                                                     <b>Stream:</b><br/>
                                                     <select
@@ -223,8 +223,8 @@ export default class Mine extends React.Component {
                                                     <option value="Other">Other</option>
                                                     </select>
                                                 </div>
-                                                <b>Start Date:</b><br/>
-                                                <input type="text" maxLength="10" size="20" value={this.state.startdate} name="startDatec"/><br/>
+                                                {/*<b>Start Date:</b><br/>
+                                                <input type="text" maxLength="10" size="20" value={this.state.startdate} name="startDatec"/><br/>*/}
                                                 <div>
                                                     <b>Start Date:</b><br/>
                                                     <select
@@ -246,8 +246,8 @@ export default class Mine extends React.Component {
                                                 </div>
                                                 <b>Area:</b><br/>
                                                 <input type="text" maxLength="20" size="20" value={this.state.area} onChange={this.commonChange} name="area"/><br/>
-                                                <b>Internal/External:</b><br/>
-                                                <input type="text" maxLength="20" size="20" value={this.state.internalexternal} onChange={this.commonChange} name="internalexternalo"/><br/>
+                                                {/*<b>Internal/External:</b><br/>
+                                                <input type="text" maxLength="20" size="20" value={this.state.internalexternal} onChange={this.commonChange} name="internalexternalo"/><br/>*/}
                                                 <div>
                                                     <b>Internal/External:</b><br/>
                                                     <select
@@ -262,8 +262,8 @@ export default class Mine extends React.Component {
                                                     <option value="External">External</option>
                                                     </select>
                                                 </div>
-                                                <b>Location:</b><br/>
-                                                <input type="text" maxLength="20" size="20" value={this.state.locationdescription} onChange={this.commonChange} name="locationdescriptiono"/><br/>
+                                                {/*<b>Location:</b><br/>
+                                                <input type="text" maxLength="20" size="20" value={this.state.locationdescription} onChange={this.commonChange} name="locationdescriptiono"/><br/>*/}
                                                 <div>
                                                     <b>Location:</b><br/>
                                                     <select
@@ -294,8 +294,8 @@ export default class Mine extends React.Component {
                                                 <input type="text" maxLength="50" size="50" value={this.state.twitter} onChange={this.commonChange} name="twitter"/><br/>
                                                 <b>Photo ID: </b><br/>
                                                 <input type="text" maxLength="50" size="50" value={this.state.photo} onChange={this.commonChange} name="photo"/><br/>
-                                                <b>ID(leave text box blank): </b><br/>
-                                                <input type="text" maxLength="50" size="50" value={this.state.id} onChange={this.commonChange} name="id"/><br/>
+                                                {/*<b>ID(leave text box blank): </b><br/>
+                                                <input type="text" maxLength="50" size="50" value={this.state.id} onChange={this.commonChange} name="id"/><br/>*/}
                                                 <button onClick={this.onSubmit}>Submit</button>
                                             </div>
                                         </div>
