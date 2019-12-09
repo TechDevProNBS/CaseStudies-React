@@ -14,6 +14,7 @@ export default class Mine extends React.Component {
 
         this.state = {
             employee: [],
+            show: ""
         };
     }
 
@@ -27,7 +28,7 @@ export default class Mine extends React.Component {
                 const datafiltered = data.filter(d => d.id == fil);
                 this.setState({
                     employee: datafiltered  
-                });
+                },() => {this.contactOptions()});
                 var datapre = data;
                 console.log(data)
                 console.log(datafiltered);    
@@ -62,6 +63,39 @@ export default class Mine extends React.Component {
         }
       }
 
+    contactOptions = () => {
+        var showtemp = "";
+        console.log(this.state.employee)
+        this.state.employee.map(data => {
+        console.log(data.email)
+        if(data.email != ""){
+            showtemp = showtemp + <tr><td><b>Email: </b></td><td>;
+            showtemp = showtemp + data.email;
+            showtemp = showtemp + </td></tr>;
+        }
+        if(data.facebook != ""){
+            //showtemp = showtemp + <tr><td><b>Facebook: </b></td><td>+{data.facebook}+</td></tr>;
+            showtemp = showtemp + data.facebook
+        }
+        if(data.linkedin != ""){
+            //showtemp = showtemp + <tr><td><b>LinkedIn: </b></td><td>+{data.linkedin}+</td></tr>;
+            showtemp = showtemp + data.linkedin
+        }
+        if(data.twitter != ""){
+            //showtemp = showtemp + <tr><td><b>Twitter: </b></td><td>+{data.twitter}+</td></tr>;
+            showtemp = showtemp + data.twitter
+        }
+        var em = data.email;
+        var fb = data.facebook;
+        var ln = data.linkedin;
+        var tw = data.twitter;
+        console.log(showtemp);
+        this.setState({
+            show: {Email: em, Facebook: fb, LinkedIn: ln, Twitter: tw}
+          }, () => {console.log(this.state)})
+        })
+    }
+                                                    
     render() {
         
             return (
@@ -93,45 +127,41 @@ export default class Mine extends React.Component {
                                                 <p className="card-text">
                                                 {data.maintext}<br/>
                                                 </p>
-                                                <p className="card-text">
-                                                    <b>Contact Me:</b><br/>
-                                                </p>
-                                                    <table>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <b>Email: </b>
-                                                            </td>
-                                                            <td>
-                                                                {data.email}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <b>Facebook: </b>
-                                                            </td>
-                                                            <td>
-                                                                {data.facebook}
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <b>LinkedIn: </b>
-                                                            </td>
-                                                            <td>
-                                                                {data.linkedin}     
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <b>Twitter: </b>
-                                                            </td>
-                                                            <td>
-                                                                {data.twitter}
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                    </table>
+                                                <p className="card-text"><b>Contact Me:</b><br/></p>
+                                                <table><tbody>
+                                                <tr>
+                                                    <td>
+                                                        <b>Email: </b>
+                                                    </td>
+                                                    <td>
+                                                        {data.email}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <b>Facebook: </b>
+                                                    </td>
+                                                    <td>
+                                                        {data.facebook}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <b>LinkedIn: </b>
+                                                    </td>
+                                                    <td>
+                                                        {data.linkedin}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <b>Twitter: </b>
+                                                    </td>
+                                                    <td>
+                                                        {data.twitter}
+                                                    </td>
+                                                </tr>
+                                                </tbody></table>
                                             </div>
                                         </div>
                                     </div>

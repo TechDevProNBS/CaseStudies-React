@@ -158,7 +158,7 @@ export default class SearchBar extends React.Component {
                       </button>
                     </span>
                   </div>
-                  <div className="collapse show" id="toggle-search">
+                  {/*<div className="collapse show" id="toggle-search">
                     <p>Filters</p>
                     <div className="row clear">
                       <div className="form-group col-md-6 col-lg-3">
@@ -237,7 +237,7 @@ export default class SearchBar extends React.Component {
                       </button>
                     </div>
                     <input type="hidden" name="pagesize" value="50"></input>
-                  </div>
+                  </div>*/}
                 </form>
                 <br></br>
                 <center>

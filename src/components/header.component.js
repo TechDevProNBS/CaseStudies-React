@@ -41,14 +41,14 @@ export default class Mine extends React.Component {
         return (
             <div>
 
-                <header class="header" id="header">
-                <div class="container">
-                <div class="row">
+                <header className="header" id="header">
+                <div className="container">
+                <div className="row">
                 <div className="col-12">
-                    <a className="logo d-none d-lg-inline-block" href="/"><img src={logoimage} className="img-fluid" alt="Nationwide Building Society" width="130" height="52"></img>
+                    <div className="logo d-none d-lg-inline-block" href="/"><img src={logoimage} className="img-fluid" alt="Nationwide Building Society" width="130" height="52"></img>
                         <a className="logo d-lg-none" href="/"><img src="/images/logo-mobile.png" className="img-fluid" alt="Nationwide Building Society" width="45" height="45"></img>
                         </a>
-                    </a>
+                    </div>
                     <div style={{ float: "right" }}>
                         <a className="header-btn header-home" href="/" aria-label="Home" id="js-home">
                             <span>Home</span>
