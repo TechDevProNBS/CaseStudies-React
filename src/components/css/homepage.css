@@ -10,7 +10,9 @@
     src: local('CabernetJFPro-Regular'), local('CabernetJFPro-Regular');
     src: url('../../fonts/CabernetJFPro-Regular.woff2') format('woff2'); 
   }
- 
+  .m-2 {
+    margin: .5rem!important
+}
 .main{
     
         margin: 0;
@@ -23,6 +25,56 @@
         background-color: #fff
    
 }
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    margin-left: 2.5rem!important;
+    margin-right: 1.5rem!important;
+    /* margin-top: 1.5rem!important; */
+    margin-bottom: 1.25rem!important;
+}
+
+.no-gutters {
+    margin-right: -4rem;
+    margin-left: 0
+}
+
+.no-gutters>.col, .no-gutters>[class*=col-] {
+    padding-right: 0;
+    padding-left: 0
+}
+
+.card {
+    position: relative;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 0.75rem!important;
+}
+
+
+
+
+.card-img{
+    position: relative; 
+    margin: 0; 
+    top: 50%; 
+    transform: translate(0, -50%);
+    width: 100%;
+    border-radius: calc(.75rem)!important;
+
+}
+
+
 .header-content {
     margin-bottom: 2rem
 }
@@ -39,6 +91,10 @@
     line-height: 1.2;
     color: #004a8f;
     font-family: NBS,Arial,sans-serif;
+}
+
+.card-text{
+    padding-bottom: 1.25rem;
 }
 .header-content, .intro-content {
     text-align: center;
@@ -93,6 +149,48 @@
 .hero .container {
     position: relative;
     z-index: 2
+}
+.col{
+    margin-bottom: 4rem;
+}
+/* .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto
+} */
+
+@media (min-width:576px) {
+    .container {
+        max-width: 540px
+    }
+}
+
+@media (min-width:768px) {
+    .container {
+        max-width: 720px
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        max-width: 960px
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        max-width: 1080px
+    }
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto
 }
 
 @media (max-width:767.98px) {
