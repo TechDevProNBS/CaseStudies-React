@@ -58,7 +58,7 @@ export default class Mine extends React.Component {
       }
       renderRedirect = () => {
         if (this.state.redirect) {
-          return <Redirect to='/showtable' />
+          return <Redirect to='/viewprofiles' />
         }
       }
 
