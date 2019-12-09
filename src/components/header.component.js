@@ -45,9 +45,7 @@ export default class Mine extends React.Component {
                 <div class="container">
                 <div class="row">
                 <div className="col-12">
-                    <a className="logo d-none d-lg-inline-block" href="/"><img src={logoimage} className="img-fluid" alt="Nationwide Building Society" width="130" height="52"></img>
-                        <a className="logo d-lg-none" href="/"><img src="/images/logo-mobile.png" className="img-fluid" alt="Nationwide Building Society" width="45" height="45"></img>
-                        </a>
+                    <a className="logo" href="/"><img src={logoimage} className="img-fluid" alt="Nationwide Building Society" width="130" height="52"></img>
                     </a>
                     <div style={{ float: "right" }}>
                         <a className="header-btn header-home" href="/" aria-label="Home" id="js-home">
