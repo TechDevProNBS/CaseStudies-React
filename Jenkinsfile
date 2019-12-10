@@ -11,9 +11,8 @@ pipeline {
 	sh 'git pull origin developer'
        }
      }
-   }
+ 
 
-   stages {
       stage('install React') {
         steps {
           sh 'sudo apt update'
@@ -21,9 +20,8 @@ pipeline {
           sh 'sudo install npm'
         }
       }
-   }
 
-   stages {
+
       stage('Start React') {
         steps {
           sh 'npm start'
