@@ -7,7 +7,7 @@ pipeline {
      stage('update from github') {
        steps {
 	sh 'git init'
-	sh 'git pull origin master'
+	sh 'git pull origin developer'
          echo "pull for git"
        }
      }
