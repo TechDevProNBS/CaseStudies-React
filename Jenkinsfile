@@ -7,7 +7,7 @@ pipeline {
 	sh 'cd ~'
 	sh 'git init'
 	sh 'git pull origin developer'
-        sh 'cd workspace/CaseStudies-React/'
+        
        }
      }
  
