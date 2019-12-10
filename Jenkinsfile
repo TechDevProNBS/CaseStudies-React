@@ -6,7 +6,7 @@ pipeline {
    stages {
      stage('update from github') {
        steps {
-	sh 'cd ~/Desktop/TechDevProNBS/CaseStudies-React/'
+	sh 'cd ~/Desktop/TechDevProNBS/CaseStudies-React2/'
 	sh 'git init'
 	sh 'git pull origin developer'
        }
