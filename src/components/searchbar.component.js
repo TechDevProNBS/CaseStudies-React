@@ -127,7 +127,7 @@ export default class SearchBar extends React.Component {
   render() {
     return (
       <div>
-        <div className="casestudy-search">
+        {/*<div className="casestudy-search">
           <div className="container">
             <div className="row">
               <div className="col-12">
@@ -137,7 +137,7 @@ export default class SearchBar extends React.Component {
                   aria-label="Nationwide casestudies search"
                   role="search"
                 >
-                  <div className="form-group main-search-field">
+                  /*<div className="form-group main-search-field">
                     <label className="sr-only" for="main-search-field">
                       Search Keywords
                     </label>
@@ -153,8 +153,8 @@ export default class SearchBar extends React.Component {
                         autoComplete="off"
                         minLength="2"
                         onChange= {this.filterbyanything}
-                      />
-                      <button type="button" onClick={this.filterbyanything}>
+                      />*/
+                      /*<button type="button" onClick={this.filterbyanything}>
                         <img src={magnifying_glass} width="20" height="20" alt="magnifying glass"/>
                       </button>
                     </span>
@@ -238,8 +238,8 @@ export default class SearchBar extends React.Component {
                       </button>
                     </div>
                     <input type="hidden" name="pagesize" value="50"></input>
-                  </div>*/}
-                </form>
+                  </div>*/
+                /*</form>
                 <br></br>
                 <center>
                 {/*<table>
@@ -266,13 +266,13 @@ export default class SearchBar extends React.Component {
                             </tr>
                      )
                      </tbody>
-                 </table>*/}
+                 </table>
                 </center>
                 <br></br>
               </div>
             </div>
           </div>
-        </div>
+        </div>*/}
       </div>
     );
   }
