@@ -13,6 +13,8 @@
   .m-2 {
     margin: .5rem!important
 }
+
+
 .main{
     
         margin: 0;
@@ -229,6 +231,10 @@
     color: #fff
 }
 
+.col-12{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
 .col-md-12 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 100%;
