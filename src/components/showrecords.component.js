@@ -1,4 +1,5 @@
 import React from 'react';
+import './css/showrecords.css';
 //import useState from "react";
 //import setShow from "react";
 //import show from "react";
@@ -118,20 +119,20 @@ export default class Mine extends React.Component {
             return (
                 <div>
                     {/*<SearchBar/>*/}
-                    <div className="container">
+                    <div className="searchbar col-lg-12 col-xl-12">
                         <div className="row">
                             <div className="col-12">
                                 <div className="form-group main-search-field">
                                     <label className="sr-only" htmlFor="main-search-field">
                                     Search Keywords
                                     </label>
-                                    <span className="input-group m-2">
+                                    <span className="input-group">
                                     <input
                                         id="filterbysearch"
                                         style={{ width: "90%", marginRight: "2px" }}
                                         type="search"
                                         name="search"
-                                        placeholder="Search Case Studies"
+                                        placeholder="Search Profiles"
                                         className="form-control"
                                         maxLength="100"
                                         autoComplete="off"
@@ -140,7 +141,7 @@ export default class Mine extends React.Component {
                                     </span>
                                 </div>
                             
-                    <div className="collapse show container" id="toggle-search">
+                    <div className="container">
                     {/*<p>Filters</p>*/}
                     <div className="row">
                       <div className="form-group col-md-6 col-lg-3">
@@ -152,7 +153,7 @@ export default class Mine extends React.Component {
                           aria-label="Select location"
                           onChange = {this.refreshFilter}
                         >
-                          <option value="" selected="selected">Select Location</option>
+                          <option value="" selected="selected">Any Location</option>
                           <option value="Swindon">Swindon</option>
                           <option value="London">London</option>
                           <option value="Bournemouth">Bournemouth</option>
@@ -169,7 +170,7 @@ export default class Mine extends React.Component {
                           title="Search Year"
                           onChange = {this.refreshFilter}
                         >
-                          <option value="" selected="selected">Select Start Date</option>
+                          <option value="" selected="selected">Any Start Date</option>
                           <option value="Sep 2015">Sep 2015</option>
                           <option value="Sep 2016">Sep 2016</option>
                           <option value="Sep 2017">Sep 2017</option>
@@ -188,7 +189,7 @@ export default class Mine extends React.Component {
                           aria-label="Select Stream"
                           onChange = {this.refreshFilter}
                         >
-                          <option value="" selected="selected">Select Stream</option>
+                          <option value="" selected="selected">Any Stream</option>
                           <option value="Software Engineering">Software Engineering</option>
                           <option value="DevOps">DevOps</option>
                           <option value="Cyber Security">Cyber Security</option>
@@ -216,17 +217,17 @@ export default class Mine extends React.Component {
                     </div>
                     <input type="hidden" name="pagesize" value="50"></input>
                   </div>
-                    <font face="calibri">
+                    <font face="NBS">
                             {this.state.data.map(data => {
                                 return (
                             <div className="container" key={data.id}>
-                            <div className="row m-2">
+                            <div className="row2">
                                 <div className="card mb-3 col-lg-12 col-xl-12" style={{ maxWidth: "1040px" }}>
-                                    <div className="row no-gutters">
+                                    <div className="row">
                                         <div className="col-md-4" style={{ maxWidth: "250px" }}>
-                                            <img src={"http://127.0.0.1:8080/" + data.photo} style={{ borderStyle: "solid", borderColor: "black", borderWidth: "1px"}}  className="card-img" alt={data.name} />
+                                            <img src={"http://127.0.0.1:8080/" + data.photo}   className="card-img" alt={data.name} />
                                         </div>
-                                        <div className="col-md-8">
+                                        <div className="col-md-8 col-xl-8">
                                             <div className="card-body">
                                                 <h5 className="card-title"><b>{data.name}</b></h5>
                                                 <div style={{}}className="card-text"><b>Programme:</b> {data.programme}</div>
@@ -239,7 +240,8 @@ export default class Mine extends React.Component {
                                                 {data.maintext.substring(0,250)}...<br/>
                                                 </p>
                                                 {this.renderRedirect()}
-                                                <button onClick={()=>{this.setState({id:data.id});console.log("here"+data.id); this.setRedirect()}} id={data.id}>View Full Profile</button>
+                                                <button onClick={()=>{this.setState({id:data.id});console.log("here"+data.id); this.setRedirect()}} id={data.id}class="btn btn-primary" >View Full Profile</button>
+                                             
                                             </div>
                                         </div>
                                     </div>
