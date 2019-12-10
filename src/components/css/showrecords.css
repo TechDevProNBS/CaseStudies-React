@@ -77,6 +77,35 @@
   background-color: #004a8f
 }
 
+.header-content {
+  margin-bottom: 0;
+}
+
+/* .tdpheading{
+  color: white!important;
+} */
+
+@media (min-width:992px) {
+  .header-content {
+    margin-bottom: 0rem!important;
+  }
+}
+
+.card-body {
+  flex: 1 1 auto!important;
+  min-height: 1px!important;
+  padding: 0.25rem!important;
+  margin-top: 2%!important;
+  margin-bottom: 2%!important;
+}
+
+.hero-heading {
+  font-family: 'CabernetJFPro';
+  font-weight: 400;
+  letter-spacing: .01rem;
+  color: white;
+}
+
 @media (min-width:992px) {
   .searchbar {
     margin-bottom: 2.5rem
@@ -207,6 +236,6 @@
   }
 }
 
-.row2{
+.row2 {
   margin: 2.5rem!important;
 }

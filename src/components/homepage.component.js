@@ -57,7 +57,7 @@ export default class Homepage extends React.Component {
                         <div className="container">
                             <div className="cms-content header-content">
                                 <h2 className="h2">About the scheme</h2>
-                                <p>
+                                <p className="abouttext">
                               
                                     18 months, on-the-job training for graduates, recent graduates and career changers who want to fast-track their way to becoming technical specialists. 
                                     You could be promoted into a technical specialist role in an area such as Software Engineering, Security, Infrastructure or Online/Mobile Banking. 
@@ -74,7 +74,7 @@ export default class Homepage extends React.Component {
                                      <div className="col-md-4 col-xl-4" style={{ maxWidth: "250px" }}>
                                      <img src={markbatesimage} className="card-img" alt="TDP ACCELERATOR" /> 
                                         </div> 
-                                        <div className="col-md-8 col-xl-8">
+                                        <div className="col-md-8 col-xl-9">
                                             <div className="card-body">
                                             {/* card-title */}
                                              <h5 className="py-3"><b>Mark Bates</b></h5>
@@ -122,7 +122,7 @@ export default class Homepage extends React.Component {
                                         <div className="col-md-4 col-xl-4" style={{ maxWidth: "250px" }}>
                                             <img src={testimage} className="card-img " alt="TDP ACCELERATOR" />
                                         </div>
-                                        <div className="col-md-8 col-xl-8">
+                                        <div className="col-md-8 col-xl-9">
                                             <div className="card-body ">
                                             {/* card-title */}
                                                 <h5 className="py-3 "><b>John Lennon</b></h5>
