@@ -1,12 +1,10 @@
-#Scripts for getting React running on loal server
-
 pipeline {
     agent any
 
    stages {
      stage('update from github') {
        steps {
-	sh 'cd ~/Desktop/TechDevProNBS/CaseStudies-React2/'
+	sh 'cd ~/Desktop/TechDevProNBS/CaseStudies-React/'
 	sh 'git init'
 	sh 'git pull origin developer'
        }
