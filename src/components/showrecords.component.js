@@ -7,7 +7,7 @@ import React from 'react';
 //import Button from 'react-bootstrap/Button';
 //import Modal from 'react-bootstrap/Modal';
 import { Redirect } from 'react-router-dom';
-import SearchBar from './searchbar.component.js';
+//import SearchBar from './searchbar.component.js';
 
 export default class Mine extends React.Component {
     constructor() {
