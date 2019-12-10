@@ -8,6 +8,8 @@ import React from 'react';
 //import Modal from 'react-bootstrap/Modal';
 import { Redirect } from 'react-router-dom';
 //import ContentEditable from 'react-contenteditable';
+import "../App.css";
+import Upload from "./upload.component.js";
 
 export default class Mine extends React.Component {
     constructor(props){
@@ -194,10 +196,11 @@ export default class Mine extends React.Component {
                                     <div className="row no-gutters">
                                         <div style={{ maxWidth: "250px"}}>
                                             <img src={"http://127.0.0.1:8080/" + this.state.photo} style={{ borderStyle: "solid", borderColor: "black", borderWidth: "1px"}}  className="card-img" alt={this.state.name} /><br/>
-                                            <button>Upload new photo</button>
                                         </div>
                                         <div >
+                                        <Upload />
                                             <div className="card-body">
+                                            
                                                 <b>Name: </b><br/>
                                                 <input type="text" maxLength="20" size="20" defaultValue={this.state.name} onChange={this.commonChange} name="name"/><br/>
                                                 <b>Programme:</b><br/>
