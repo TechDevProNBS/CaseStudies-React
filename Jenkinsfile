@@ -10,16 +10,6 @@ pipeline {
         
        }
      }
- 
-
-      stage('install React') {
-        steps {
-          sh 'sudo -n apt update'
-          sh 'sudo -n apt install npm'
-          sh 'sudo -n install npm'
-        }
-      }
-
 
       stage('Start React') {
         steps {
