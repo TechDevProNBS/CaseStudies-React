@@ -14,9 +14,9 @@ pipeline {
 
       stage('install React') {
         steps {
-          sh 'sudo -m apt update'
-          sh 'sudo -m apt install npm'
-          sh 'sudo -m install npm'
+          sh 'sudo -n apt update'
+          sh 'sudo -n apt install npm'
+          sh 'sudo -n install npm'
         }
       }
 
