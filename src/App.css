@@ -21,3 +21,7 @@
     box-sizing: border-box;
   }
   
+  .rv-xy-plot__axis__title text{
+    fill: rgb(237, 28, 36);
+    font-size: 13px;
+  }
