@@ -72,7 +72,7 @@ class Upload extends Component {
 
       const formData = new FormData();
       formData.append("file", file, file.name);
-
+      sessionStorage.setItem("filename", file.name)
       req.open("POST", "http://localhost:8000/upload");
       req.send(formData);
     });
@@ -137,6 +137,7 @@ class Upload extends Component {
           </div>
           <div className="Files">
             {this.state.files.map(file => {
+              console.log(file.name);
               return (
                 <div key={file.name} className="Row">
                   <span className="Filename">{file.name}</span>

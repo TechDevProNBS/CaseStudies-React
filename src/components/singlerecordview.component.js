@@ -104,6 +104,28 @@ export default class Mine extends React.Component {
                     {this.renderRedirect()}
                     <button onClick={this.setRedirect}>Back</button>
                             {this.state.employee.map(data => {
+                                var finalstartdate = "";
+                                if(data.startdate === "2015-09"){
+                                  finalstartdate = "Sep 2015"
+                                }
+                                if(data.startdate === "2016-09"){
+                                  finalstartdate = "Sep 2016"
+                                }
+                                if(data.startdate === "2017-09"){
+                                  finalstartdate = "Sep 2017"
+                                }
+                                if(data.startdate === "2018-09"){
+                                  finalstartdate = "Sep 2018"
+                                }
+                                if(data.startdate === "2019-05"){
+                                  finalstartdate = "May 2019"
+                                }
+                                if(data.startdate === "2019-09"){
+                                  finalstartdate = "Sep 2019"
+                                }
+                                if(data.startdate === "2020-09"){
+                                  finalstartdate = "Sep 2020"
+                                }
                                 return (
                             <div className="container" key={data.id}>
                             <div className="row m-2">
@@ -118,10 +140,10 @@ export default class Mine extends React.Component {
                                                 <div style={{}}className="card-text"><b>Programme:</b> {data.programme}</div>
                                                 <div style={{}}className="card-text"><b>Current Role:</b> {data.districtdescription}</div>
                                                 <div style={{}}className="card-text"><b>Stream:</b> {data.stream}</div>
-                                                <div style={{}}className="card-text"><b>Start Date:</b> {data.startdate}</div>
+                                                <div style={{}}className="card-text"><b>Start Date:</b> {finalstartdate}</div>
                                                 <div style={{}}className="card-text"><b>Area:</b> {data.area}</div>
                                                 <div style={{}}className="card-text"><b>Internal/External:</b> {data.internalexternal}</div>
-                                                <div style={{}}className="card-text"><b>Location:</b> {data.locationdescription}</div><br/>
+                                                <div style={{}}className="card-text"><b>Location:</b> {data.locationdescription}</div>
                                                 <p className="card-text">
                                                 <b>Background: </b>{data.background}<br/><span></span></p>
                                                 <p className="card-text">
