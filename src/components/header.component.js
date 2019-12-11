@@ -13,7 +13,8 @@ export default class Mine extends React.Component {
         super(props);
 
         this.state = {
-            LoginButton: ""
+            LoginButton: "",
+            stats: ""
         };
     }
 
@@ -23,16 +24,19 @@ export default class Mine extends React.Component {
             .then(response => response.json())
             .then(data => {
                 var show = "";
+                var statsshow ="";
                 console.log(data.loggedin);
                 if (data.loggedin == "true") {
                     show = <a className="header-btn" href="/logout"><span>Logout</span></a>;
+                    statsshow = <a className="header-btn header-home" href="/statistics" aria-label="Home" id="js-home"><span>Statistics</span></a>;
                     console.log("logged in");
                   } else {
                     show = <a className="header-btn" href="/login"><span>Login</span></a>;
                     console.log("not logged in");
                   }
                 this.setState({
-                    LoginButton: show 
+                    LoginButton: show,
+                    stats: statsshow 
                 }, () => { console.log(this.state.view); })
             })
     }
@@ -49,8 +53,9 @@ export default class Mine extends React.Component {
                     </a>
                     <div style={{ float: "right" }}>
                         <a className="header-btn header-home" href="/" aria-label="Home" id="js-home">
-                            <span>Home</span>
+                            <span>Home</span>   
                         </a>
+                        {this.state.stats}
                         <a className="header-btn header-home" href="/viewprofiles" aria-label="Home" id="js-home">
                             <span>TDP Profiles</span>
                         </a>

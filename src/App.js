@@ -12,6 +12,7 @@ import HomePage from './components/homepage.component.js';
 import AdminSingleRecord from './components/adminsinglerecordview.component.js';
 import ViewProfiles from './components/viewprofiles.component.js';
 import ViewSingleProfile from './components/viewsingleprofile.component.js';
+import Statistics from './components/statistics.component.js';
 //import { Redirect } from 'react-router-dom';
 
 export default class Nationwide extends React.Component{
@@ -30,6 +31,7 @@ export default class Nationwide extends React.Component{
                 <Route exact path="/logout" component={Logout}/>               
                 <Route exact path="/newprofile" component={CreateUser}/>   
                 <Route exact path="/search" component={SearchBar}/>
+                <Route exact path="/statistics" component={Statistics}/>
                 <Route exact path="/viewprofiles/adminfullview/:var?" component={AdminSingleRecord}/>
             </div>
         </Router>
