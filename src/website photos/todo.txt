@@ -1,0 +1,36 @@
+update backend and front end				done
+integrate login						done
+
+integrate filter/search					done
+make contacts optional/only show those with data	ignored
+sort photos						done
+photo upload						done
+
+figure out back button
+figure out redirect
+
+
+improve login
+code cleanup
+fix errors
+
+run eureka first
+test: http://localhost:8761/
+mvn spring-boot:run
+run three login backends
+run notes backend
+run login front end react
+test: http://localhost:3000/
+
+install live server in code extensions
+then run live server notes app
+test: http://127.0.0.1:5500/
+10 min bearer tokens
+each function gets token, does things, gets a new token to send to next function eg get,post, put, delete
+sessionStorage.setItem("example", "eg")
+sessionStorage.getItem("example")
+will return eg
+wont nedd ngnix
+
+
+start photo server http-server ./

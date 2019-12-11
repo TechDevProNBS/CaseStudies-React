@@ -22,7 +22,9 @@ export default class Mine extends React.Component {
       year: "",
       stream: "",
       internal: "",
-      search: ""
+      search: "",
+      tempstart:"",
+      finalstartdate:""
     };
   }
 
@@ -32,10 +34,11 @@ export default class Mine extends React.Component {
     })
       .then(response => response.json())
       .then(data => {
-        this.setState({
-          employee: data
-        }, () => { this.refreshData() })
-      })
+            this.setState({
+              employee: data
+            }, () => { this.refreshData() })
+    });
+        
   }
 
   refreshFilter = (event) => {
@@ -99,11 +102,10 @@ export default class Mine extends React.Component {
     });
   }
 
-
-
   state = {
     redirect: false
   }
+
   setRedirect = () => {
     this.setState({
       redirect: true
@@ -177,13 +179,13 @@ export default class Mine extends React.Component {
                       onChange={this.refreshFilter}
                     >
                       <option value="" selected="selected">Any Start Date</option>
-                      <option value="Sep 2015">Sep 2015</option>
-                      <option value="Sep 2016">Sep 2016</option>
-                      <option value="Sep 2017">Sep 2017</option>
-                      <option value="Sep 2018">Sep 2018</option>
-                      <option value="May 2019">May 2019</option>
-                      <option value="Sep 2019">Sep 2019</option>
-                      <option value="Sep 2020">Sep 2020</option>
+                      <option value="2015-09">Sep 2015</option>
+                      <option value="2016-09">Sep 2016</option>
+                      <option value="2017-09">Sep 2017</option>
+                      <option value="2018-09">Sep 2018</option>
+                      <option value="2019-05">May 2019</option>
+                      <option value="2019-09">Sep 2019</option>
+                      <option value="2020-09">Sep 2020</option>
                     </select>
                   </div>
                   <div className="form-group col-md-6 col-lg-3">
@@ -231,7 +233,29 @@ export default class Mine extends React.Component {
         </div> */}
 
         <font face="NBS">
-          {this.state.data.map(data => {
+          {this.state.data.map(data => { 
+            var finalstartdate = "";
+            if(data.startdate === "2015-09"){
+              finalstartdate = "Sep 2015"
+            }
+            if(data.startdate === "2016-09"){
+              finalstartdate = "Sep 2016"
+            }
+            if(data.startdate === "2017-09"){
+              finalstartdate = "Sep 2017"
+            }
+            if(data.startdate === "2018-09"){
+              finalstartdate = "Sep 2018"
+            }
+            if(data.startdate === "2019-05"){
+              finalstartdate = "May 2019"
+            }
+            if(data.startdate === "2019-09"){
+              finalstartdate = "Sep 2019"
+            }
+            if(data.startdate === "2020-09"){
+              finalstartdate = "Sep 2020"
+            }
             return (
               <div className="container" key={data.id}>
                 <div className="row2">
@@ -246,7 +270,7 @@ export default class Mine extends React.Component {
                           <div style={{}} className="text"><b>Programme:</b> {data.programme}</div>
                           <div style={{}} className="text"><b>Current Role:</b> {data.districtdescription}</div>
                           <div style={{}} className="text"><b>Stream:</b> {data.stream}</div>
-                          <div style={{}} className="text"><b>Start Date:</b> {data.startdate}</div>
+                          <div style={{}} className="text"><b>Start Date: </b>{finalstartdate}</div>
                           <p className="text">
                             <b>Background: </b>{data.background}<span></span></p>
                           <p className="text">

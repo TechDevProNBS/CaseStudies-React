@@ -37,6 +37,7 @@ export default class Mine extends React.Component {
     }
 
     componentDidMount = () => {
+        
         console.log("eh"+this.props.match.params.var)
         fetch(`http://localhost:4500/logincheck`,{
             method: 'GET'})
@@ -64,6 +65,7 @@ export default class Mine extends React.Component {
                             const datafiltered = data.filter(d => d.id == fil);
                             console.log(datafiltered);
                             {datafiltered.map(d => {
+                                sessionStorage.setItem("filename", d.photo);
                                 this.setState({
                                     id: d.id,
                                     name: d.name,
@@ -139,7 +141,6 @@ export default class Mine extends React.Component {
     onSubmit = (e) => {
         e.preventDefault();
         console.log('Was this called');
-
             let data = {
                 "id": this.state.id,
                 "name": this.state.name,
@@ -152,13 +153,13 @@ export default class Mine extends React.Component {
                 "facebook": this.state.facebook,
                 "linkedin": this.state.linkedin,
                 "twitter": this.state.twitter,
-                "photo": this.state.photo,
+                "photo": sessionStorage.getItem("filename"),
                 "area": this.state.area,
                 "internalexternal": this.state.internalexternal,
                 "locationdescription": this.state.locationdescription,
                 "programme": this.state.programme
             }
-
+            sessionStorage.setItem("filename", "");
             console.log(JSON.stringify(data) + "attempted to be created")
 
             fetch(`http://localhost:9011/record`, {
@@ -194,9 +195,9 @@ export default class Mine extends React.Component {
                             <div className="row m-2">
                                 <div className="card mb-3" style={{ maxWidth: "1040px" }}>
                                     <div className="row no-gutters">
-                                        <div style={{ maxWidth: "250px"}}>
+                                        {/*<div style={{ maxWidth: "250px"}}>
                                             <img src={"http://127.0.0.1:8080/" + this.state.photo} style={{ borderStyle: "solid", borderColor: "black", borderWidth: "1px"}}  className="card-img" alt={this.state.name} /><br/>
-                                        </div>
+                                        </div>*/}
                                         <div >
                                         <Upload />
                                             <div className="card-body">
@@ -238,13 +239,13 @@ export default class Mine extends React.Component {
                                                     onChange = {this.commonChange}
                                                     >
                                                     <option value="" selected="selected">{this.state.startdate}</option>
-                                                    <option value="Sep 2015">Sep 2015</option>
-                                                    <option value="Sep 2016">Sep 2016</option>
-                                                    <option value="Sep 2017">Sep 2017</option>
-                                                    <option value="Sep 2018">Sep 2018</option>
-                                                    <option value="May 2019">May 2019</option>
-                                                    <option value="Sep 2019">Sep 2019</option>
-                                                    <option value="Sep 2020">Sep 2020</option>
+                                                    <option value="2015-09">Sep 2015</option>
+                                                    <option value="2016-09">Sep 2016</option>
+                                                    <option value="2017-09">Sep 2017</option>
+                                                    <option value="2018-09">Sep 2018</option>
+                                                    <option value="2019-05">May 2019</option>
+                                                    <option value="2019-09">Sep 2019</option>
+                                                    <option value="2020-09">Sep 2020</option>
                                                     </select>
                                                 </div>
                                                 <b>Area:</b><br/>
@@ -296,7 +297,7 @@ export default class Mine extends React.Component {
                                                 <b>Twitter: </b><br/>
                                                 <input type="text" maxLength="50" size="50" value={this.state.twitter} onChange={this.commonChange} name="twitter"/><br/>
                                                 <b>Photo ID: </b><br/>
-                                                <input type="text" maxLength="50" size="50" value={this.state.photo} onChange={this.commonChange} name="photo"/><br/>
+                                                <input type="text" maxLength="50" size="50" value={sessionStorage.getItem("filename")} onChange={this.commonChange} name="photo"/><br/>
                                                 {/*<b>ID(leave text box blank): </b><br/>
                                                 <input type="text" maxLength="50" size="50" value={this.state.id} onChange={this.commonChange} name="id"/><br/>*/}
                                                 <button onClick={this.onSubmit}>Submit</button>
