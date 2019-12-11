@@ -12,7 +12,7 @@ import HomePage from './components/homepage.component.js';
 import AdminSingleRecord from './components/adminsinglerecordview.component.js';
 import ViewProfiles from './components/viewprofiles.component.js';
 import ViewSingleProfile from './components/viewsingleprofile.component.js';
-import Statistics from './components/statistics.component.js';
+import Statistics from './components/statisticsview.component.js';
 //import { Redirect } from 'react-router-dom';
 
 export default class Nationwide extends React.Component{
