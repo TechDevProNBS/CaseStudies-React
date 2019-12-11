@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CountUp from 'react-countup';
-import '../node_modules/react-vis/dist/style.css'
+import '../../node_modules/react-vis/dist/style.css'
 import '../App.css'
 import {
     XYPlot,
@@ -27,13 +27,27 @@ export default class AreaGraph extends Component {
     }
 
     componentDidMount() {
-        fetch(`http://localhost:4000`)
+        fetch(`http://localhost:4500/logincheck`,{
+            method: 'GET'})
             .then(response => response.json())
-            .then(data =>
+            .then(data => {
+                var show = "";
+                console.log(data.loggedin);
+                if (data.loggedin == "false") {
+                    window.location.replace(`/viewprofiles`);
+                  }
                 this.setState({
-                    values: data
-                }, () => console.log(this.state.values[0]))
-            );
+                    view: show 
+                }, () => { 
+                    fetch(`http://localhost:4500/stats`)
+                .then(response => response.json())
+                .then(data =>
+                    this.setState({
+                        values: data
+                    }, () => console.log(this.state.values[0]))
+                );
+            });
+        });   
     }
 
     render() {
