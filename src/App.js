@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom"
 //import ShowRecords from './components/showrecords.component.js';
 //import SingleRecord from './components/singlerecordview.component.js';
 import Header from './components/header.component.js';
+import Footer from './components/footer.component.js';
 //import SearchBar from './components/searchbar.component.js';
 import Login from './components/login.component.js';
 import Logout from './components/logout.component.js';
@@ -33,6 +34,7 @@ export default class Nationwide extends React.Component{
                 <Route exact path="/statistics" component={Statistics}/>
             </div>
         </Router>
+        <Footer/>
     </div>
     );
   }

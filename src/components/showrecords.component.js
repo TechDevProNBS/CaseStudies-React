@@ -264,7 +264,7 @@ export default class Mine extends React.Component {
                       <div className="col-md-4" style={{ maxWidth: "250px" }}>
                         <img src={"http://127.0.0.1:8080/" + data.photo} className="card-img" alt={data.name} />
                       </div>
-                      <div className="col-md-8 col-xl-9">
+                      <div className="col-md-8 col-xl-7">
                         <div className="card-body">
                           <h5 className="card-title"><b>{data.name}</b></h5>
                           <div style={{}} className="text"><b>Programme:</b> {data.programme}</div>
@@ -272,10 +272,10 @@ export default class Mine extends React.Component {
                           <div style={{}} className="text"><b>Stream:</b> {data.stream}</div>
                           <div style={{}} className="text"><b>Start Date: </b>{finalstartdate}</div>
                           <p className="text">
-                            <b>Background: </b>{data.background}<span></span></p>
-                          <p className="text">
+                            <b>Background: </b> {data.background.substring(0, 250)}...<br /><span></span></p>
+                          {/* <p className="text">
                             {data.maintext.substring(0, 250)}...<br />
-                          </p>
+                          </p> */}
                           {this.renderRedirect()}
                           <button onClick={() => { /*this.setState({ id: data.id })*/sessionStorage.setItem("profile", data.id); console.log("here" + data.id); /*this.setRedirect()*/ window.location.href = '/viewprofiles/fullview'; }} id={data.id} class="btn btn-primary" >View Full Profile</button>
 

@@ -205,14 +205,13 @@ export default class Mine extends React.Component {
                               <div className="container">
                                   <div className="cms-content header-content" style={{ float: 'left' }}>
               
-                                      {this.renderRedirect()}
-                                      <button onClick={() => { this.setRedirect() }} id="back" class="btn btn-primary"style={{ marginTop: "39px" }} >Back</button>
+                                      {/*this.renderRedirect()*/}
+                                      {/*<button onClick={() => { this.setRedirect() }} id="back" class="btn btn-primary"style={{ marginTop: "39px" }} >Back</button>*/}
                                   </div>
                               </div>
                               <br></br>
                               <br></br>
-                              <font face="NBS" color="red"><b className="cms-content header-content" style={{ float: 'right' }} >You are logged in as an Administrator.</b></font>
-                              <br></br>
+                              {/*<font face="NBS" color="red"><b className="cms-content header-content" style={{ float: 'right' }} >You are logged in as an Administrator.</b></font>*/}
                               <br></br>
                               
                               <form>
@@ -234,11 +233,11 @@ export default class Mine extends React.Component {
                                                           <div className="card-body">
               
                                                               <b className="card-title">Name: </b><br />
-                                                              <input type="text" maxLength="20" size="20" defaultValue={this.state.name} onChange={this.commonChange} name="name" class="form-control" /><br />
+                                                              <input type="text" maxLength="255" size="20" defaultValue={this.state.name} onChange={this.commonChange} name="name" class="form-control" /><br />
                                                               <b className="card-title">Programme:</b><br />
-                                                              <input type="text" maxLength="20" size="20" defaultValue={this.state.programme} onChange={this.commonChange} name="programme" class="form-control" /><br />
+                                                              <input type="text" maxLength="255" size="20" defaultValue={this.state.programme} onChange={this.commonChange} name="programme" class="form-control" /><br />
                                                               <b className="card-title">Current Role:</b><br />
-                                                              <input type="text" maxLength="20" size="20" value={this.state.districtdescription} onChange={this.commonChange} name="districtdescription" class="form-control" /><br />
+                                                              <input type="text" maxLength="255" size="20" value={this.state.districtdescription} onChange={this.commonChange} name="districtdescription" class="form-control" /><br />
                                                               {/*<b>Stream:</b><br/>
                                                               <input type="text" maxLength="20" size="20" value={this.state.stream} onChange={this.commonChange} name="streamo"/><br/>*/}
                                                               <div>
@@ -316,19 +315,19 @@ export default class Mine extends React.Component {
                                                                   </select>
                                                               </div>
                                                               <b className="card-title">Background: </b><br />
-                                                              <textarea rows="4" cols="150" maxLength="200" size="200" value={this.state.background} onChange={this.commonChange} name="background" class="form-control" /><br />
+                                                              <textarea rows="4" cols="150" maxLength="255" size="200" value={this.state.background} onChange={this.commonChange} name="background" class="form-control" /><br />
                                                               <b className="card-title">Main Text: </b><br />
-                                                              <textarea rows="10" cols="50" maxLength="500" size="500" value={this.state.maintext} onChange={this.commonChange} name="maintext" class="form-control" /><br />
+                                                              <textarea rows="10" cols="50" maxLength="2000" size="500" value={this.state.maintext} onChange={this.commonChange} name="maintext" class="form-control" /><br />
                                                               <b className="card-title">Email: </b><br />
-                                                              <input type="text" maxLength="50" size="50" value={this.state.email} onChange={this.commonChange} name="email" class="form-control" /><br />
+                                                              <input type="text" maxLength="255" size="50" value={this.state.email} onChange={this.commonChange} name="email" class="form-control" /><br />
                                                               <b className="card-title">Facebook: </b><br />
-                                                              <input type="text" maxLength="50" size="50" value={this.state.facebook} onChange={this.commonChange} name="facebook" class="form-control" /><br />
+                                                              <input type="text" maxLength="255" size="50" value={this.state.facebook} onChange={this.commonChange} name="facebook" class="form-control" /><br />
                                                               <b className="card-title">LinkedIn: </b><br />
-                                                              <input type="text" maxLength="50" size="50" value={this.state.linkedin} onChange={this.commonChange} name="linkedin" class="form-control" /><br />
+                                                              <input type="text" maxLength="255" size="50" value={this.state.linkedin} onChange={this.commonChange} name="linkedin" class="form-control" /><br />
                                                               <b className="card-title">Twitter: </b><br />
-                                                              <input type="text" maxLength="50" size="50" value={this.state.twitter} onChange={this.commonChange} name="twitter" class="form-control" /><br />
+                                                              <input type="text" maxLength="255" size="50" value={this.state.twitter} onChange={this.commonChange} name="twitter" class="form-control" /><br />
                                                               <b className="card-title">Photo ID: </b><br />
-                                                              <input type="text" maxLength="50" size="50" value={sessionStorage.getItem("filename")} onChange={this.commonChange} name="photo" class="form-control" /><br />
+                                                              <input type="text" maxLength="255" size="50" value={sessionStorage.getItem("filename")} onChange={this.commonChange} name="photo" class="form-control" /><br />
                                                               {/*<b>ID(leave text box blank): </b><br/>
                                                               <input type="text" maxLength="50" size="50" value={this.state.id} onChange={this.commonChange} name="id"/><br/>*/}
               
