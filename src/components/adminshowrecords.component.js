@@ -256,7 +256,17 @@ export default class Mine extends React.Component {
         </div>
 
 
-        <font face="NBS">                          
+
+
+
+        <font face="NBS">
+          <div className="container">
+            <div className="cms-content header-content">
+
+              {this.renderRedirect()}
+              <button onClick={() => { this.setRedirect() }} id={1} class="btn btn-primary">Add New Profile</button>
+            </div>
+          </div>
           {this.state.data.map(data => {
             var finalstartdate = "";
             if (data.startdate === "2015-09") {

@@ -104,7 +104,7 @@ class Upload extends Component {
         <button
           onClick={() =>
             this.setState({ files: [], successfullUploaded: false })
-          }
+          } class="btn btn-danger"
         >
           Clear
         </button>
@@ -112,13 +112,11 @@ class Upload extends Component {
     } else {
       return (
         <div>
-        Once your photo is selected, click here to upload: 
-        <button
-          disabled={this.state.files.length < 0 || this.state.uploading}
-          onClick={this.uploadFiles}
-        >
-          Upload
-        </button>
+          {/* Once your photo is selected, click here to upload:  */}
+          <button
+            disabled={this.state.files.length < 0 || this.state.uploading}
+            onClick={this.uploadFiles} class="btn btn-primary" style={{ marginLeft: "65px" }}
+          >Upload</button>
         </div>
       );
     }
@@ -127,7 +125,7 @@ class Upload extends Component {
   render() {
     return (
       <div className="Upload">
-        <span className="Title">Upload a photo by clicking the circle or by dragging and dropping a photo on the circle.</span>
+        {/* <span className="Title">Upload a photo by clicking the circle or by dragging and dropping a photo on the circle.</span> */}
         <div className="Content">
           <div>
             <Dropzone
