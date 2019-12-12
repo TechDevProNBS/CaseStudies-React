@@ -4,8 +4,8 @@ import React from "react";
 //import Button from "react-bootstrap/Button";
 //import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import magnifying_glass from "./images/magnifying-glass.png";
-import refresh from "./images/refresh.jpg";
+//import magnifying_glass from "./images/magnifying-glass.png";
+//import refresh from "./images/refresh.jpg";
 
 import varA from "./images/A.jpg";
 import varB from "./images/B.jfif";

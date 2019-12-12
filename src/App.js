@@ -14,6 +14,7 @@ import HomePage from './components/homepage.component.js';
 import ViewProfiles from './components/viewprofiles.component.js';
 import ViewSingleProfile from './components/viewsingleprofile.component.js';
 import Statistics from './components/statisticsview.component.js';
+//import Upload2 from './components/upload.component.js/index.js';
 //import { Redirect } from 'react-router-dom';
 
 export default class Nationwide extends React.Component{
@@ -26,7 +27,7 @@ export default class Nationwide extends React.Component{
                 <Route exact path="/" component={HomePage}/>
                 <Route exact path="/viewprofiles" component={ViewProfiles}/>
                 <Route exact path="/viewprofiles/fullview" component={ViewSingleProfile}/>
-                <Route exact path="/login" component={Login}/>    
+                <Route exact path="/login" component={Login}/>      
                 <Route exact path="/logout" component={Logout}/>               
                 <Route exact path="/newprofile" component={CreateUser}/>   
                 <Route exact path="/statistics" component={Statistics}/>

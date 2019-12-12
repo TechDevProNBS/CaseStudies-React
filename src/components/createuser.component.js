@@ -80,7 +80,7 @@ export default class Mine extends React.Component {
             window.location.replace(`/viewprofiles`);
         }
         else{
-            sessionStorage.setItem("filename", "default.svg");
+            sessionStorage.setItem("filename", "https://tdp-group-project.s3.eu-west-2.amazonaws.com/bucketFolder/1576177762455-lg.png");
         }
         // fetch(`http://localhost:4500/logincheck`,{
         //     method: 'GET'})
@@ -279,7 +279,7 @@ export default class Mine extends React.Component {
                                                                   </select>
                                                               </div>
                                                               <b className="card-title">Area:</b><br />
-                                                              <input type="text" maxLength="20" size="20" value={this.state.area} onChange={this.commonChange} name="area" class="form-control" /><br />
+                                                              <input type="text" maxLength="255" size="20" value={this.state.area} onChange={this.commonChange} name="area" class="form-control" /><br />
                                                               {/*<b>Internal/External:</b><br/>
                                                               <input type="text" maxLength="20" size="20" value={this.state.internalexternal} onChange={this.commonChange} name="internalexternalo"/><br/>*/}
                                                               <div>

@@ -4,8 +4,8 @@ import { Redirect } from 'react-router-dom';
 import './css/homepage.css'
 import markbatesimage from '../images/markbates.jpg'
 import tdpbanner from '../images/stockbanner2.jpg'
-import testimage from '../images/test.jpg'
-import { classBody } from '@babel/types';
+//import testimage from '../images/test.jpg'
+//import { classBody } from '@babel/types';
 
 var tdpbannerstyle = {
   
