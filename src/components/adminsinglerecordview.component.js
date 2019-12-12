@@ -44,31 +44,33 @@ export default class Mine extends React.Component {
     }
 
     componentDidMount = () => {
-
-        console.log("eh" + this.props.match.params.var)
-        fetch(`http://localhost:4500/logincheck`, {
-            method: 'GET'
-        })
-            .then(response => response.json())
-            .then(data => {
-                var show = "";
-                console.log(data.loggedin);
-                if (data.loggedin == "false") {
-                    window.location.replace(`/viewprofiles`);
-                }
-                this.setState({
-                    view: show
-                }, () => {
-                    console.log(this.state.view);
-                    fetch(`http://localhost:9011/record`, {
-                        method: 'GET'
-                    })
+        
+        //console.log("eh"+this.props.match.params.var)
+        // fetch(`http://localhost:4500/logincheck`,{
+        //     method: 'GET'})
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         var show = "";
+        //         console.log(data.loggedin);
+        //         if (data.loggedin == "false") {
+        //             window.location.replace(`/viewprofiles`);
+        //           }
+        //         this.setState({
+        //             view: show 
+        //         }, () => 
+        // if(sessionStorage.getItem("username") == ""){
+        //     window.location.replace(`/viewprofiles`);
+        // }
+        // else{ 
+                    console.log(this.state.view); 
+                    fetch(`http://localhost:9011/record`,{
+                        method: 'GET'})
                         .then(response => response.json())
                         .then(data => {
                             this.setState({
                                 employee: data
                             });
-                            var fil = this.props.match.params.var;
+                            var fil = sessionStorage.getItem("profile");
                             var datapre = data;
                             console.log(data)
                             const datafiltered = data.filter(d => d.id == fil);
@@ -97,14 +99,10 @@ export default class Mine extends React.Component {
                                 })
                             };
                             console.log(this.state);
-                            console.log("name is :" + this.state.employee)
-                        }, () => {
-                            console.log(this.state);
-                        })
-
-                })
-            })
-
+                            console.log("name is :"+this.state.employee)
+                            }, () => {console.log(this.state);
+                                 })
+        //    }
     }
 
     state = {
@@ -153,26 +151,29 @@ export default class Mine extends React.Component {
     onSubmit = (e) => {
         e.preventDefault();
         console.log('Was this called');
-        let data = {
-            "id": this.state.id,
-            "name": this.state.name,
-            "startdate": this.state.startdate,
-            "districtdescription": this.state.districtdescription,
-            "background": this.state.background,
-            "maintext": this.state.maintext,
-            "stream": this.state.stream,
-            "email": this.state.email,
-            "facebook": this.state.facebook,
-            "linkedin": this.state.linkedin,
-            "twitter": this.state.twitter,
-            "photo": sessionStorage.getItem("filename"),
-            "area": this.state.area,
-            "internalexternal": this.state.internalexternal,
-            "locationdescription": this.state.locationdescription,
-            "programme": this.state.programme
+        if(sessionStorage.getItem("filename") == ""){
+            sessionStorage.setItem("filename", "default.svg");
         }
-        sessionStorage.setItem("filename", "");
-        console.log(JSON.stringify(data) + "attempted to be created")
+            let data = {
+                "id": this.state.id,
+                "name": this.state.name,
+                "startdate": this.state.startdate,
+                "districtdescription": this.state.districtdescription,
+                "background": this.state.background,
+                "maintext": this.state.maintext,
+                "stream": this.state.stream,
+                "email": this.state.email,
+                "facebook": this.state.facebook,
+                "linkedin": this.state.linkedin,
+                "twitter": this.state.twitter,
+                "photo": sessionStorage.getItem("filename"),
+                "area": this.state.area,
+                "internalexternal": this.state.internalexternal,
+                "locationdescription": this.state.locationdescription,
+                "programme": this.state.programme
+            }
+            sessionStorage.setItem("filename", "");
+            console.log(JSON.stringify(data) + "attempted to be created")
 
         fetch(`http://localhost:9011/record`, {
             method: 'PUT',

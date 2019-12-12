@@ -15,16 +15,9 @@ export default class Login extends React.Component {
     }
 
     componentDidMount = () => {
-        fetch(`http://localhost:4500/logincheck`,{
-            method: 'GET'})
-            .then(response => response.json())
-            .then(data => {
-                var show = "";
-                console.log(data.loggedin);
-                if (data.loggedin == "true") {
-                    window.location.replace(`/viewprofiles`)
-            }
-        })
+        if((sessionStorage.getItem("username"))){
+            window.location.replace(`/viewprofiles`);
+        }
     }
 
     setRedirect = () => {
@@ -57,7 +50,7 @@ export default class Login extends React.Component {
                     console.log('Success');
 
                     //localStorage.setItem('name', data.name);
-                    //localStorage.setItem('username', data.username);
+                    sessionStorage.setItem('username', data.username);
                     //localStorage.setItem('role', data.role);
 
                     //console.log(localStorage.getItem('name') + ' Saved name');
