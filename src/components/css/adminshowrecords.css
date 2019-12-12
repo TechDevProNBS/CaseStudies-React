@@ -25,6 +25,11 @@
   font-family: NBS, Arial, sans-serif;
 }
 
+#back{
+  color: #fff!important;
+  background-color: #004a8f!important;
+  border-color: #004a8f!important;
+}
 .btn-primary {
   margin-top: 10px;
   color: #fff!important;

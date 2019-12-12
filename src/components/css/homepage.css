@@ -163,6 +163,9 @@
     text-align: center;
 }
 
+.banner{
+    margin-bottom:35px;
+}
 .hero {
     position: relative;
     padding-top: 100px;
