@@ -306,10 +306,10 @@ export default class Mine extends React.Component {
                           <div style={{}} className="text"><b>Stream:</b> {data.stream}</div>
                           <div style={{}} className="text"><b>Start Date: </b>{finalstartdate}</div>
                           <p className="text">
-                            <b>Background: </b>{data.background}<span></span></p>
-                          <p className="text">
+                            <b>Background: </b> {data.background.substring(0, 250)}...<br /><span></span></p>
+                          {/* <p className="text">
                             {data.maintext.substring(0, 250)}...<br />
-                          </p>
+                          </p> */}
                           {this.renderRedirect2()}
                           <button onClick={() => { sessionStorage.setItem("profile", data.id); console.log("here" + data.id); /*this.setRedirect2()*/ window.location.href = '/viewprofiles/fullview' }} id={data.id} class="btn btn-primary">View/Edit Profile</button>
                           <button onClick={() => { this.deleteRecord(data.id) }} id={data.id} class="btn btn-danger" style={{ marginLeft: "10px" }}>Delete Profile</button>
