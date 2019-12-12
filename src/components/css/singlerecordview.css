@@ -205,6 +205,14 @@
     }
   }
   
+  #back{
+    color: #fff!important;
+    background-color: #004a8f!important;
+    border-color: #004a8f!important;
+  }
+  .b .text{
+    font-weight: bold!important;
+  }
   .container-fluid {
     width: 100%;
     padding-right: 15px;

@@ -86,7 +86,7 @@ class Upload extends Component {
           <Progress progress={uploadProgress ? uploadProgress.percentage : 0} />
           <img
             className="CheckIcon"
-            alt="done"
+            alt="Image uploaded"
             src="baseline-check_circle_outline-24px.svg"
             style={{
               opacity:
@@ -104,9 +104,9 @@ class Upload extends Component {
         <button
           onClick={() =>
             this.setState({ files: [], successfullUploaded: false })
-          } class="btn btn-danger"
+          } class="btn btn-danger" style={{ marginLeft: "65px" }}
         >
-          Clear
+          Remove
         </button>
       );
     } else {

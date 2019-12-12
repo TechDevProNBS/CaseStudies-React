@@ -264,7 +264,7 @@ export default class Mine extends React.Component {
             <div className="cms-content header-content">
 
               {this.renderRedirect()}
-              <button onClick={() => { this.setRedirect() }} id={1} class="btn btn-primary">Add New Profile</button>
+              <button onClick={() => { this.setRedirect() }} id={1} id="back" class="btn btn-primary">Add New Profile</button>
             </div>
           </div>
           {this.state.data.map(data => {

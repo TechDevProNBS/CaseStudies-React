@@ -213,7 +213,7 @@ export default class Mine extends React.Component {
                     <div className="cms-content header-content">
 
                         {this.renderRedirect()}
-                        {/* <button onClick={() => { this.setRedirect() }} class="btn btn-primary"style={{ marginTop: "2rem" }} >Back</button> */}
+                        <button onClick={() => { this.setRedirect() }} id="back"  class="btn btn-primary"style={{ marginTop: "39px", float: 'left'  }}>Back</button>
                     </div>
                 </div>
                 <br></br>
