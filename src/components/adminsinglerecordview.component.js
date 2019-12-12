@@ -38,19 +38,23 @@ export default class Mine extends React.Component {
 
     componentDidMount = () => {
         
-        console.log("eh"+this.props.match.params.var)
-        fetch(`http://localhost:4500/logincheck`,{
-            method: 'GET'})
-            .then(response => response.json())
-            .then(data => {
-                var show = "";
-                console.log(data.loggedin);
-                if (data.loggedin == "false") {
-                    window.location.replace(`/viewprofiles`);
-                  }
-                this.setState({
-                    view: show 
-                }, () => { 
+        //console.log("eh"+this.props.match.params.var)
+        // fetch(`http://localhost:4500/logincheck`,{
+        //     method: 'GET'})
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         var show = "";
+        //         console.log(data.loggedin);
+        //         if (data.loggedin == "false") {
+        //             window.location.replace(`/viewprofiles`);
+        //           }
+        //         this.setState({
+        //             view: show 
+        //         }, () => 
+        // if(sessionStorage.getItem("username") == ""){
+        //     window.location.replace(`/viewprofiles`);
+        // }
+        // else{ 
                     console.log(this.state.view); 
                     fetch(`http://localhost:9011/record`,{
                         method: 'GET'})
@@ -59,7 +63,7 @@ export default class Mine extends React.Component {
                             this.setState({
                                 employee: data  
                             });
-                            var fil = this.props.match.params.var;
+                            var fil = sessionStorage.getItem("profile");
                             var datapre = data;
                             console.log(data)
                             const datafiltered = data.filter(d => d.id == fil);
@@ -89,10 +93,7 @@ export default class Mine extends React.Component {
                             console.log("name is :"+this.state.employee)
                             }, () => {console.log(this.state);
                                  })
-                
-                })
-            })
-        
+        //    }
     }
 
     state = {
@@ -141,6 +142,9 @@ export default class Mine extends React.Component {
     onSubmit = (e) => {
         e.preventDefault();
         console.log('Was this called');
+        if(sessionStorage.getItem("filename") == ""){
+            sessionStorage.setItem("filename", "default.svg");
+        }
             let data = {
                 "id": this.state.id,
                 "name": this.state.name,

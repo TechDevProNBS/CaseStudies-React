@@ -27,27 +27,18 @@ export default class AreaGraph extends Component {
     }
 
     componentDidMount() {
-        fetch(`http://localhost:4500/logincheck`,{
-            method: 'GET'})
+        if(!(sessionStorage.getItem("username"))){
+            window.location.replace(`/viewprofiles`);
+        }
+        else{ 
+            fetch(`http://localhost:4500/stats`)
             .then(response => response.json())
-            .then(data => {
-                var show = "";
-                console.log(data.loggedin);
-                if (data.loggedin == "false") {
-                    window.location.replace(`/viewprofiles`);
-                  }
+            .then(data =>
                 this.setState({
-                    view: show 
-                }, () => { 
-                    fetch(`http://localhost:4500/stats`)
-                .then(response => response.json())
-                .then(data =>
-                    this.setState({
-                        values: data
-                    }, () => console.log(this.state.values[0]))
-                );
-            });
-        });   
+                    values: data
+                }, () => console.log(this.state.values[0]))
+            );   
+        } 
     }
 
     render() {

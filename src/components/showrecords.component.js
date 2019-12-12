@@ -114,7 +114,7 @@ export default class Mine extends React.Component {
   renderRedirect = () => {
     if (this.state.redirect) {
       console.log(this.props.value + this.props.key + this.props.id)
-      let url = '/viewprofiles/fullview/' + this.state.id;
+      let url = '/viewprofiles/fullview/';
       return <Redirect to={url} />
     }
   }
@@ -277,7 +277,7 @@ export default class Mine extends React.Component {
                             {data.maintext.substring(0, 250)}...<br />
                           </p>
                           {this.renderRedirect()}
-                          <button onClick={() => { this.setState({ id: data.id }); console.log("here" + data.id); this.setRedirect() }} id={data.id} class="btn btn-primary" >View Full Profile</button>
+                          <button onClick={() => { /*this.setState({ id: data.id })*/sessionStorage.setItem("profile", data.id); console.log("here" + data.id); this.setRedirect() }} id={data.id} class="btn btn-primary" >View Full Profile</button>
 
                         </div>
                       </div>

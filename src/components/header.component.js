@@ -14,31 +14,58 @@ export default class Mine extends React.Component {
 
         this.state = {
             LoginButton: "",
-            stats: ""
+            LoginButton: "",
+            stats: "",
+            user: ""
         };
     }
 
     componentDidMount = () => {
-        fetch(`http://localhost:4500/logincheck`,{
-            method: 'GET'})
-            .then(response => response.json())
-            .then(data => {
                 var show = "";
                 var statsshow ="";
-                console.log(data.loggedin);
-                if (data.loggedin == "true") {
-                    show = <a className="header-btn" href="/logout"><span>Logout</span></a>;
-                    statsshow = <a className="header-btn header-home" href="/statistics" aria-label="Home" id="js-home"><span>Statistics</span></a>;
-                    console.log("logged in");
-                  } else {
+                var usershow ="";
+                if(!(sessionStorage.getItem("username"))) {
                     show = <a className="header-btn" href="/login"><span>Login</span></a>;
                     console.log("not logged in");
+                  } else {
+                    show = <a className="header-btn" href="/logout"><span>Logout</span></a>;
+                    console.log("show");
+                    console.log("show");
+                    statsshow = <a className="header-btn header-home" href="/statistics" aria-label="Home" id="js-home"><span>Statistics</span></a>;
+                    usershow = <div className="header-btn header-home"><span>You are logged in as: {sessionStorage.getItem("username")}</span></div>;
+                    console.log("logged in");
                   }
                 this.setState({
                     LoginButton: show,
-                    stats: statsshow 
+                    stats: statsshow,
+                    user: usershow 
                 }, () => { console.log(this.state.view); })
-            })
+            
+        
+        
+
+
+
+        // fetch(`http://localhost:4500/logincheck`,{
+        //     method: 'GET'})
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         var show = "";
+        //         var statsshow ="";
+        //         console.log(data.loggedin);
+        //         if (data.loggedin == "true") {
+        //             show = <a className="header-btn" href="/logout"><span>Logout</span></a>;
+        //             statsshow = <a className="header-btn header-home" href="/statistics" aria-label="Home" id="js-home"><span>Statistics</span></a>;
+        //             console.log("logged in");
+        //           } else {
+        //             show = <a className="header-btn" href="/login"><span>Login</span></a>;
+        //             console.log("not logged in");
+        //           }
+        //         this.setState({
+        //             LoginButton: show,
+        //             stats: statsshow 
+        //         }, () => { console.log(this.state.view); })
+        //     })
     }
 
     render() {
@@ -52,6 +79,7 @@ export default class Mine extends React.Component {
                     <a className="logo" href="/"><img src={logoimage} className="img-fluid" alt="Nationwide Building Society" width="130" height="52"></img>
                     </a>
                     <div style={{ float: "right" }}>
+                        {this.state.user}
                         <a className="header-btn header-home" href="/" aria-label="Home" id="js-home">
                             <span>Home</span>   
                         </a>

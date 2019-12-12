@@ -21,23 +21,36 @@ export default class Mine extends React.Component {
     }
 
     componentDidMount = () => {
-        fetch(`http://localhost:4500/logincheck`,{
-            method: 'GET'})
-            .then(response => response.json())
-            .then(data => {
-                var show = "";
-                console.log(data.loggedin);
-                if (data.loggedin == "true") {
-                    show = <AdminShowRecords/>;
-                    console.log("logged in");
-                  } else {
-                    show = <ShowRecords/>;
-                    console.log("not logged in");
-                  }
-                this.setState({
-                    view: show 
-                }, () => { console.log(this.state.view); })
-            })
+        var show = "";
+        if(!(sessionStorage.getItem("username")))
+        //if(sessionStorage.getItem("username") == "")
+        {
+            show = <ShowRecords/>;
+        }
+        else{
+            show = <AdminShowRecords/>;
+        }
+        this.setState({
+             view: show 
+        }, () => { console.log(this.state.view); })
+
+        // fetch(`http://localhost:4500/logincheck`,{
+        //     method: 'GET'})
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         var show = "";
+        //         console.log(data.loggedin);
+        //         if (data.loggedin == "true") {
+        //             show = <AdminShowRecords/>;
+        //             console.log("logged in");
+        //           } else {
+        //             show = <ShowRecords/>;
+        //             console.log("not logged in");
+        //           }
+        //         this.setState({
+        //             view: show 
+        //         }, () => { console.log(this.state.view); })
+        //     })
     }
 
     render() {
