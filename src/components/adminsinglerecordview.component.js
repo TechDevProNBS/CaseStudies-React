@@ -63,7 +63,7 @@ export default class Mine extends React.Component {
         // }
         // else{ 
                     console.log(this.state.view); 
-                    fetch(`http://localhost:9011/record`,{
+                    fetch(`http://51.11.58.157:9011/record`,{
                         method: 'GET'})
                         .then(response => response.json())
                         .then(data => {
@@ -175,7 +175,7 @@ export default class Mine extends React.Component {
             sessionStorage.setItem("filename", "");
             console.log(JSON.stringify(data) + "attempted to be created")
 
-        fetch(`http://localhost:9011/record`, {
+        fetch(`http://51.11.58.157:9011/record`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

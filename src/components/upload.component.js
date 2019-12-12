@@ -73,7 +73,7 @@ class Upload extends Component {
       const formData = new FormData();
       formData.append("file", file, file.name);
       sessionStorage.setItem("filename", file.name)
-      req.open("POST", "http://localhost:4500/upload");
+      req.open("POST", "http://51.11.59.169:4500/upload");
       req.send(formData);
     });
   }

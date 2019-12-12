@@ -166,7 +166,7 @@ export default class Mine extends React.Component {
             sessionStorage.setItem("filename", "")
             console.log(JSON.stringify(data) + "attempted to be created")
 
-            fetch(`http://localhost:9011/record`, {
+            fetch(`http://51.11.58.157:9011/record`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
