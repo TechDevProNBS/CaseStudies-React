@@ -277,7 +277,7 @@ export default class Mine extends React.Component {
                             {data.maintext.substring(0, 250)}...<br />
                           </p>
                           {this.renderRedirect()}
-                          <button onClick={() => { /*this.setState({ id: data.id })*/sessionStorage.setItem("profile", data.id); console.log("here" + data.id); this.setRedirect() }} id={data.id} class="btn btn-primary" >View Full Profile</button>
+                          <button onClick={() => { /*this.setState({ id: data.id })*/sessionStorage.setItem("profile", data.id); console.log("here" + data.id); /*this.setRedirect()*/ window.location.href = '/viewprofiles/fullview'; }} id={data.id} class="btn btn-primary" >View Full Profile</button>
 
                         </div>
                       </div>
