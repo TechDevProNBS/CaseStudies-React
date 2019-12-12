@@ -26,7 +26,7 @@ export default class Mine extends React.Component {
   }
 
   componentDidMount = () => {
-    fetch(`http://localhost:9011/record`, {
+    fetch(`http://51.11.58.157:9011/record`, {
       method: 'GET'
     })
       .then(response => response.json())
@@ -135,7 +135,7 @@ export default class Mine extends React.Component {
       "id": _id
     }
     console.log(JSON.stringify(data))
-    fetch(`http://localhost:9011/record`, {
+    fetch(`http://51.11.58.157:9011/record`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

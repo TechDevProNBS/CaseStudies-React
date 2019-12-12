@@ -32,7 +32,7 @@ export default class AreaGraph extends Component {
             //window.location.replace(`/viewprofiles`);
         }
         else{ 
-            fetch(`http://localhost:4500/stats`)
+            fetch(`http://51.11.59.169:4500/stats`)
             .then(response => response.json())
             .then(data =>
                 this.setState({
