@@ -122,8 +122,8 @@ export default class Mine extends React.Component {
                 <div className="container">
                     <div className="cms-content header-content">
 
-                        {this.renderRedirect()}
-                        <button onClick={() => { this.setRedirect() }} id="back"  class="btn btn-primary"style={{ marginTop: "39px", float: 'left'  }}>Back</button>
+                        {/*this.renderRedirect()*/}
+                        {/*<button onClick={() => { this.setRedirect() }} id="back"  class="btn btn-primary"style={{ marginTop: "39px", float: 'left'  }}>Back</button>*/}
                     </div>
                 </div>
                 <br></br>
@@ -160,7 +160,7 @@ export default class Mine extends React.Component {
                                             <div className="col-md-4" style={{ maxWidth: "250px" }}>
                                                 <img src={"http://127.0.0.1:8080/" + data.photo} className="card-img" alt={data.name} />
                                             </div>
-                                            <div className="col-md-8 col-xl-9">
+                                            <div className="col-md-8 col-xl-7">
                                                 <div className="card-body">
                                                     <h3 className="card-title"><b>{data.name}</b></h3>
                                                     <div className="text" ><b>Programme:</b>

@@ -205,14 +205,13 @@ export default class Mine extends React.Component {
                               <div className="container">
                                   <div className="cms-content header-content" style={{ float: 'left' }}>
               
-                                      {this.renderRedirect()}
-                                      <button onClick={() => { this.setRedirect() }} id="back" class="btn btn-primary"style={{ marginTop: "39px" }} >Back</button>
+                                      {/*this.renderRedirect()*/}
+                                      {/*<button onClick={() => { this.setRedirect() }} id="back" class="btn btn-primary"style={{ marginTop: "39px" }} >Back</button>*/}
                                   </div>
                               </div>
                               <br></br>
                               <br></br>
-                              <font face="NBS" color="red"><b className="cms-content header-content" style={{ float: 'right' }} >You are logged in as an Administrator.</b></font>
-                              <br></br>
+                              {/*<font face="NBS" color="red"><b className="cms-content header-content" style={{ float: 'right' }} >You are logged in as an Administrator.</b></font>*/}
                               <br></br>
                               
                               <form>

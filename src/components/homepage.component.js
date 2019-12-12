@@ -74,7 +74,7 @@ export default class Homepage extends React.Component {
                                      <div className="col-md-4 col-xl-4" style={{ maxWidth: "250px" }}>
                                      <img src={markbatesimage} className="card-img" alt="TDP ACCELERATOR" /> 
                                         </div> 
-                                        <div className="col-md-8 col-xl-9">
+                                        <div className="col-md-8 col-xl-7">
                                             <div className="card-body">
                                             {/* card-title */}
                                              <h5 className="py-3"><b>Mark Bates</b></h5>
@@ -115,16 +115,16 @@ export default class Homepage extends React.Component {
                              
 
 
-                        <div className="container">
+                        {/* <div className="container">
                             <div className="row m-2 ">
                                 <div className="card mb-3 col-lg-12 col-xl-12" style={{ maxWidth: "1040px" }}>
                                     <div className="row ">
                                         <div className="col-md-4 col-xl-4" style={{ maxWidth: "250px" }}>
                                             <img src={testimage} className="card-img " alt="TDP ACCELERATOR" />
                                         </div>
-                                        <div className="col-md-8 col-xl-9">
+                                        <div className="col-md-8 col-xl-7">
                                             <div className="card-body ">
-                                            {/* card-title */}
+                                            
                                                 <h5 className="py-3 "><b>John Lennon</b></h5>
 
                                                 <p className="card-text">
@@ -148,13 +148,7 @@ export default class Homepage extends React.Component {
                                     </div>
                                 </div>       
                                 </div>
-                            </div>
-
-
-
-
-
-
+                            </div> */}
                     </div>
                 </div>
             </div>
