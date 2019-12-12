@@ -3,7 +3,7 @@ import React from 'react';
 //import Button from 'react-bootstrap/Button';
 //import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import './css/footer.css'
-import logoimage from '../images/logo.png'
+//import logoimage from '../images/logo.png'
 //import {Navbar, Nav, NavItem } from 'react-bootstrap'
 //import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 

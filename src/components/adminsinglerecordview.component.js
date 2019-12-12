@@ -152,7 +152,7 @@ export default class Mine extends React.Component {
         e.preventDefault();
         console.log('Was this called');
         if(sessionStorage.getItem("filename") == ""){
-            sessionStorage.setItem("filename", "default.svg");
+            sessionStorage.setItem("filename", "https://tdp-group-project.s3.eu-west-2.amazonaws.com/bucketFolder/1576177762455-lg.png");
         }
             let data = {
                 "id": this.state.id,

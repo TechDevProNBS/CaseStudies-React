@@ -296,7 +296,7 @@ export default class Mine extends React.Component {
                   <div className="card mb-3 col-lg-12 col-xl-12" style={{ maxWidth: "1040px" }}>
                     <div className="row">
                       <div className="col-md-4" style={{ maxWidth: "250px" }}>
-                        <img src={"http://127.0.0.1:8080/" + data.photo} className="card-img" alt={data.name} />
+                        <img src={data.photo} className="card-img" alt={data.name} />
                       </div>
                       <div className="col-md-8 col-xl-7">
                         <div className="card-body">
