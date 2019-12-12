@@ -187,7 +187,8 @@ export default class Mine extends React.Component {
 
                 if (response.status === 200) {
                     console.log('Employee Updated');
-                    window.location.replace(`/viewprofiles`);
+                    window.location.href = '/viewprofiles';
+                    //window.location.replace(`/viewprofiles`);
                 } else {
                     alert('Failed to update employee');
                 };

@@ -264,7 +264,7 @@ export default class Mine extends React.Component {
             <div className="cms-content header-content">
 
               {this.renderRedirect()}
-              <button onClick={() => { this.setRedirect() }} id={1} class="btn btn-primary">Add New Profile</button>
+              <button onClick={() => { window.location.href = '/newprofile'}} id={1} class="btn btn-primary">Add New Profile</button>
             </div>
           </div>
           {this.state.data.map(data => {
@@ -311,7 +311,7 @@ export default class Mine extends React.Component {
                             {data.maintext.substring(0, 250)}...<br />
                           </p>
                           {this.renderRedirect2()}
-                          <button onClick={() => { sessionStorage.setItem("profile", data.id); console.log("here" + data.id); this.setRedirect2() }} id={data.id} class="btn btn-primary">View/Edit Profile</button>
+                          <button onClick={() => { sessionStorage.setItem("profile", data.id); console.log("here" + data.id); /*this.setRedirect2()*/ window.location.href = '/viewprofiles/fullview' }} id={data.id} class="btn btn-primary">View/Edit Profile</button>
                           <button onClick={() => { this.deleteRecord(data.id) }} id={data.id} class="btn btn-danger" style={{ marginLeft: "10px" }}>Delete Profile</button>
 
 

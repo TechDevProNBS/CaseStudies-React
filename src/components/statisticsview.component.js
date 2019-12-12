@@ -28,7 +28,8 @@ export default class AreaGraph extends Component {
 
     componentDidMount() {
         if(!(sessionStorage.getItem("username"))){
-            window.location.replace(`/viewprofiles`);
+            window.location.href = '/viewprofiles';
+            //window.location.replace(`/viewprofiles`);
         }
         else{ 
             fetch(`http://localhost:4500/stats`)

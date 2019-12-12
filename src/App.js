@@ -20,7 +20,7 @@ export default class Nationwide extends React.Component{
     return (
       <div className="bg-light">
         <Header/>
-        <Router>
+        <Router >
             <div>
                 <Route exact path="/" component={HomePage}/>
                 <Route exact path="/viewprofiles" component={ViewProfiles}/>

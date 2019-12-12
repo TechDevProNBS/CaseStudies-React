@@ -102,7 +102,7 @@ export default class Mine extends React.Component {
                 <div>
                     <font face="calibri">
                     {this.renderRedirect()}
-                    <button onClick={this.setRedirect}>Back</button>
+                    <button onClick={() =>{window.location.href = '/viewprofiles';}}>Back</button>
                             {this.state.employee.map(data => {
                                 var finalstartdate = "";
                                 if(data.startdate === "2015-09"){
