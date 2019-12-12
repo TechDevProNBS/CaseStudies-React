@@ -28,11 +28,13 @@ export default class Mine extends React.Component {
                     show = <a className="header-btn" href="/login"><span>Login</span></a>;
                     console.log("not logged in");
                   } else {
-                    show = <a className="header-btn" href="/logout"><span>Logout</span></a>;
+                    show = <a className="header-btn" href="/logout"><span>{sessionStorage.getItem("username")}(Logout)</span></a>;
                     console.log("show");
                     console.log("show");
                     statsshow = <a className="header-btn header-home" href="/statistics" aria-label="Home" id="js-home"><span>Statistics</span></a>;
-                    usershow = <div className="header-btn header-home"><span>You are logged in as: {sessionStorage.getItem("username")}</span></div>;
+                    usershow = <div className="header-btn header-home">
+                        {/* <span>You are logged in as: {sessionStorage.getItem("username")}</span> */}
+                        </div>;
                     console.log("logged in");
                   }
                 this.setState({
