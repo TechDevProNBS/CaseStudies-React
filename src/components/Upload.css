@@ -1,4 +1,4 @@
-.Upload {
+/* .Upload {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -94,4 +94,10 @@ button {
 button:disabled {
   background: rgb(189, 189, 189);
   cursor: default;
+} */
+
+.btn-primary {
+  color: #fff!important;
+  background-color: #0069d9!important;
+  border-color: #0069d9!important;
 }

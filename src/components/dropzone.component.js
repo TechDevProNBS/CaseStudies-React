@@ -80,7 +80,7 @@ class Dropzone extends Component {
           className="Icon"
           src= {cloud}
         />
-        <span>Click here!</span>
+        <span>Browse Profile Image</span>
       </div>
     );
   }
