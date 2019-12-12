@@ -25,13 +25,12 @@ export default class Mine extends React.Component {
     }
 
     componentDidMount = () => {
-        console.log("eh" + this.props.match.params.var)
-        fetch(`http://localhost:9011/record`, {
-            method: 'GET'
-        })
+        //console.log("eh"+this.props.match.params.var)
+        fetch(`http://localhost:9011/record`,{
+            method: 'GET'})
             .then(response => response.json())
             .then(data => {
-                var fil = this.props.match.params.var;
+                var fil = sessionStorage.getItem("profile");
                 const datafiltered = data.filter(d => d.id == fil);
                 this.setState({
                     employee: datafiltered

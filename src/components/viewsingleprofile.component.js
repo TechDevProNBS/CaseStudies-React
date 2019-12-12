@@ -8,16 +8,37 @@ import React from 'react';
 //import Modal from 'react-bootstrap/Modal';
 //import { Redirect } from 'react-router-dom';
 //import SearchBar from './searchbar.component.js';
-import ViewSingleProfile from './viewsingleprofile.component.js';
-//import AdminSingleRecordView from './adminsinglerecordview.component.js';
+import SingleRecordView from './singlerecordview.component.js';
+import AdminSingleRecordView from './adminsinglerecordview.component.js';
 
 export default class Mine extends React.Component {
-    //<AdminSingleRecordView/>
+    constructor(props){
+        super(props);
+
+        this.state = {
+            view: ""
+        };
+    }
+
+    componentDidMount = () => {
+        var show = "";
+        if(!(sessionStorage.getItem("username")))
+        //if(sessionStorage.getItem("username") == "")
+        {
+            show = <SingleRecordView/>;
+        }
+        else{
+            show = <AdminSingleRecordView/>;
+        }
+        this.setState({
+             view: show 
+        }, () => { console.log(this.state.view); })
+    }
+
     render() {
             return (
                 <div>
-                    <ViewSingleProfile/>
-                    
+                    {this.state.view}
                 </div>
             );
         }

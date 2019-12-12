@@ -76,21 +76,27 @@ export default class Mine extends React.Component {
 
     componentDidMount = () => {
         console.log("eh"+this.props.match.params.var)
-        fetch(`http://localhost:4500/logincheck`,{
-            method: 'GET'})
-            .then(response => response.json())
-            .then(data => {
-                sessionStorage.setItem("filename", "default.svg")
-                var show = "";
-                console.log(data.loggedin);
-                if (data.loggedin == "false") {
-                    window.location.replace(`/viewprofiles`);
-                  }
-                this.setState({
-                    view: show 
-                }, () => { 
-                    console.log(this.state.view); })
-            })
+        if(!(sessionStorage.getItem("username"))){
+            window.location.replace(`/viewprofiles`);
+        }
+        else{
+            sessionStorage.setItem("filename", "default.svg");
+        }
+        // fetch(`http://localhost:4500/logincheck`,{
+        //     method: 'GET'})
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         sessionStorage.setItem("filename", "default.svg")
+        //         var show = "";
+        //         console.log(data.loggedin);
+        //         if (data.loggedin == "false") {
+        //             window.location.replace(`/viewprofiles`);
+        //           }
+        //         this.setState({
+        //             view: show 
+        //         }, () => { 
+        //             console.log(this.state.view); })
+        //     })
     }
 
     state = {
@@ -172,7 +178,8 @@ export default class Mine extends React.Component {
 
                     if (response.status === 200) {
                         console.log('Employee Added');
-                        window.location.replace(`/viewprofiles`);
+                        window.location.href = '/viewprofiles';
+                        //window.location.replace(`/viewprofiles`);
                     } else {
                         alert('Failed to update employee');
                     };
